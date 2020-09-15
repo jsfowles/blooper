@@ -6,7 +6,7 @@ export const headerMotion = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: motionTiming.animationDurationXl,
+      duration: motionTiming.animationDurationXL,
       ease: motionTiming.animationTiming,
       damping: 50,
       stiffness: 250,
@@ -45,7 +45,7 @@ export const navItemMotion = {
   visible: {
     y: 0,
     transition: {
-      duration: motionTiming.animationDurationXl,
+      duration: motionTiming.animationDurationXL,
       ease: motionTiming.animationTiming,
     },
   },

@@ -5,14 +5,9 @@ import { Container, Row } from '@identity/grid';
 import { NavItems } from '@patterns/Navigation';
 // import Logo from '@components/Logo';
 
-import { headerMotion, logoMotion } from './motion';
-
 const Header = () => {
   return (
     <motion.header
-      variants={headerMotion}
-      initial="hidden"
-      animate="visible"
       style={{
         background: '#ffffff',
         boxShadow: 'var(--box-shadow)',
@@ -21,7 +16,6 @@ const Header = () => {
       <Container space={{ padding: 'vertical-md' }}>
         <Row justifyContent="space-between">
           <motion.div
-            variants={{ ...logoMotion }}
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -29,7 +23,7 @@ const Header = () => {
               justifyContent: 'space-between',
             }}
           >
-            <div>THE PEAK</div>
+            <div>Blooper</div>
             <NavItems />
           </motion.div>
         </Row>

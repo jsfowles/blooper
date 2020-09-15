@@ -1,14 +1,13 @@
 import * as React from 'react';
 import App from 'next/app';
 import Head from 'next/head';
-
 import { motion, AnimatePresence } from 'framer-motion';
 import { ThemeProvider } from 'styled-components';
 
 import Layout from '@components/Layout';
 import * as theme from '@identity/index';
 
-import { mainMotion } from '@identity/motion';
+import { mainMotion } from '@components/Layout/motion';
 
 class MyApp extends App {
   render() {
@@ -16,20 +15,18 @@ class MyApp extends App {
 
     return (
       <ThemeProvider theme={theme}>
-        <>
-          <Head>
-            <title>The Peak</title>
-            <link rel="shortcut icon" type="image/x-icon" />
-          </Head>
+        <Head>
+          <title>The Blooper</title>
+          <link rel="shortcut icon" type="image/x-icon" />
+        </Head>
 
-          <Layout>
-            <AnimatePresence exitBeforeEnter>
-              <motion.main {...mainMotion} key={router.route}>
-                <Component {...pageProps} key={router.route} />
-              </motion.main>
-            </AnimatePresence>
-          </Layout>
-        </>
+        <Layout>
+          <AnimatePresence exitBeforeEnter>
+            <motion.main {...mainMotion} key={router.route}>
+              <Component {...pageProps} key={router.route} />
+            </motion.main>
+          </AnimatePresence>
+        </Layout>
       </ThemeProvider>
     );
   }

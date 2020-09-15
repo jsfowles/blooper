@@ -1,6 +1,9 @@
 {
   "compilerOptions": {
-    "types": ["react", "jest"],
+    "types": [
+      "react",
+      "jest"
+    ],
     "module": "esnext",
     "esModuleInterop": true,
     "removeComments": true,
@@ -15,8 +18,13 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "typeRoots": ["node_modules/@types"],
-    "lib": ["es2018", "dom"],
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2018",
+      "dom"
+    ],
     "allowJs": true,
     "skipLibCheck": false,
     "allowSyntheticDefaultImports": true,
@@ -27,13 +35,27 @@
     "noEmit": true,
     "baseUrl": "./",
     "paths": {
-      "@pages/*": ["pages/*"],
-      "@components/*": ["src/components/*"],
-      "@containers/*": ["src/containers/*"],
-      "@identity/*": ["src/identity/*"],
-      "@lib/*": ["src/lib/*"],
-      "@patterns/*": ["src/patterns/*"],
-      "@views/*": ["src/views/*"]
+      "@pages/*": [
+        "pages/*"
+      ],
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@containers/*": [
+        "src/containers/*"
+      ],
+      "@identity/*": [
+        "src/identity/*"
+      ],
+      "@lib/*": [
+        "src/lib/*"
+      ],
+      "@patterns/*": [
+        "src/patterns/*"
+      ],
+      "@views/*": [
+        "src/views/*"
+      ]
     }
   },
   "include": [
@@ -42,5 +64,8 @@
     "pages/**/*",
     "test/**/*",
     "apollo/**/*"
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }

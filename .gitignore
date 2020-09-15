@@ -75,3 +75,4 @@ awsconfiguration.json
 .vscode/
 .idea/
 .now
+.vercel

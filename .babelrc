@@ -17,7 +17,6 @@
           "@containers": "./src/containers",
           "@identity": "./src/identity",
           "@lib": "./src/lib",
-          "@patterns": "./src/patterns",
           "@typings": "./typings",
           "@views": "./src/views"
         }

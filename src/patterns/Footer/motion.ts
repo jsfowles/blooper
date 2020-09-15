@@ -6,7 +6,7 @@ export const footerMotion = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: motionTiming.animationDurationXl,
+      duration: motionTiming.animationDurationXL,
       ease: motionTiming.animationTiming,
       damping: 50,
       stiffness: 250,
@@ -21,7 +21,7 @@ export const logoMotion = {
     y: 0,
     transition: {
       delay: 0.25,
-      duration: motionTiming.animationDurationXl,
+      duration: motionTiming.animationDurationXL,
       ease: motionTiming.animationTiming,
       damping: 50,
       stiffness: 250,

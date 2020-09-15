@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { navMotion, navItemMotion } from './motion';
 
 const NAV_ITEMS = [
   { id: 1, title: 'Home', route: '/' },
@@ -11,9 +10,9 @@ const NAV_ITEMS = [
 ];
 
 const NavItems = () => (
-  <motion.nav key="parent" variants={navMotion} style={{ display: 'flex' }}>
+  <motion.nav key="parent" style={{ display: 'flex' }}>
     {NAV_ITEMS.map(({ id, title, route }) => (
-      <motion.div key={id} variants={navItemMotion}>
+      <motion.div key={id}>
         <Link href={route} passHref key={id}>
           <a style={{ padding: '0 20px' }}>{title}</a>
         </Link>

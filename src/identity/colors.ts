@@ -1,8 +1,8 @@
 import { css } from 'styled-components';
 
 export const colors = css`
-  --primary-light: #35caef;
-  --primary: #00b5e2;
+  --primary-light: #acd2e4;
+  --primary: #27314a;
   --primary-dark: #0098be;
 
   --secondary-light: #4ac7c1;

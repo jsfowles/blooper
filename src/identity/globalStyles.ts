@@ -68,8 +68,10 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     line-height: 1;
-    font-weight: 300;
-    font-family: 'Graphik', sans-serif;
+
+    font-family: como, sans-serif;
+    font-weight: 400;
+    font-style: normal;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -96,5 +98,6 @@ export const GlobalStyles = createGlobalStyle`
 
   html, body, #__next {
     height: 100%;
+
   }
 `;

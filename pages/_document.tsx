@@ -44,6 +44,9 @@ export default class MyDocument extends Document {
     return (
       <html>
         <Head>
+          <link rel="stylesheet" href="https://use.typekit.net/aqg3dpk.css" />
+          <link rel="shortcut icon" href="../images/favicon.ico" />
+
           <GlobalStyles />
         </Head>
 
