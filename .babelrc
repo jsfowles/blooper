@@ -1,0 +1,27 @@
+{
+  "presets": ["next/babel"],
+  "plugins": [
+    [
+      "styled-components",
+      {
+        "ssr": true
+      }
+    ],
+    [
+      "module-resolver",
+      {
+        "root": ["./"],
+        "alias": {
+          "@pages": "./pages",
+          "@components": "./src/components",
+          "@containers": "./src/containers",
+          "@identity": "./src/identity",
+          "@lib": "./src/lib",
+          "@patterns": "./src/patterns",
+          "@typings": "./typings",
+          "@views": "./src/views"
+        }
+      }
+    ]
+  ]
+}
