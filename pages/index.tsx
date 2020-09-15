@@ -39,64 +39,82 @@ const IMAGES = [
   '/images/s9.png',
 ];
 
-export const H1 = styled.h1`
-  font-size: 14vw;
-
-  background: linear-gradient(
-    to right,
-    var(--primary),
-    var(--primary-light),
-    var(--primary-dark)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
+export const Wrapper = styled.div`
   height: 100vh;
   width: 100vw;
-  position: fixed;
   display: flex;
   justify-content: center;
   padding-bottom: 10%;
   align-items: center;
-  z-index: 10;
+  position: absolute;
+  h1 {
+    background: linear-gradient(
+      to right,
+      var(--primary) 0%,
+      var(--primary-dark) 50%,
+      var(--primary-light) 100%
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 14vw;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    overflow: hidden;
+  }
 `;
 
+function shuffle(a) {
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
 const Home = () => {
-  console.log(Math.random() * (100 - 0) + 0);
+  const shuffledArray = shuffle(IMAGES);
+
   return (
     <>
-      <H1>blooper</H1>
-      <Container scrollAxis="vertical">
-        <div>
-          {IMAGES.map((src, i) => {
-            const even = i % 2 === 0;
-            const props = {
-              x: [
-                even
-                  ? `${Math.random() * (100 - 0) + 0}%`
-                  : `${-Math.random() * (100 - 0) + 0}%`,
-                even
-                  ? `${-Math.random() * (100 - 0) + 0}%`
-                  : `${Math.random() * (100 - 0) + 0}%`,
-              ],
-              y: [
-                even
-                  ? `${Math.random() * (100 - 0) + 0}%`
-                  : `${-Math.random() * (100 - 0) + 0}%`,
-                even
-                  ? `${-Math.random() * (100 - 0) + 0}%`
-                  : `${Math.random() * (100 - 0) + 0}%`,
-              ],
-            };
+      <Wrapper>
+        <h1>blooper</h1>
+      </Wrapper>
 
-            return (
-              <Parallax key={i} {...props}>
-                <Image src={src} />
-              </Parallax>
-            );
-          })}
-        </div>
-      </Container>
+      <div style={{ overflow: 'hidden' }}>
+        {shuffledArray.map((src, i) => {
+          const even = i % 2 === 0;
+          const props = {
+            x: [
+              even
+                ? `${Math.random() * (100 - 0) + 0}%`
+                : `${-Math.random() * (100 - 0) + 0}%`,
+              even
+                ? `${-Math.random() * (100 - 0) + 0}%`
+                : `${Math.random() * (100 - 0) + 0}%`,
+            ],
+            y: [
+              even
+                ? `${Math.random() * (100 - 0) + 0}%`
+                : `${-Math.random() * (100 - 0) + 0}%`,
+              even
+                ? `${-Math.random() * (100 - 0) + 0}%`
+                : `${Math.random() * (100 - 0) + 0}%`,
+            ],
+          };
+
+          return (
+            <Parallax key={i} {...props}>
+              <Image src={src} />
+            </Parallax>
+          );
+        })}
+      </div>
     </>
   );
 };

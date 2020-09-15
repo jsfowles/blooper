@@ -12,8 +12,10 @@ export const ImageWrapper = styled.figure`
   width: 100%;
   height: 0;
   padding-top: 50%;
-
+  overflow: hidden;
   img {
+    overflow: hidden;
+
     display: block;
     width: 220px;
     height: auto;
@@ -29,6 +31,7 @@ export const Inner = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 `;
 
 class Image extends Component {
