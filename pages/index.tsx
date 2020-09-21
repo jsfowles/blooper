@@ -47,6 +47,8 @@ export const Wrapper = styled.div`
   padding-bottom: 10%;
   align-items: center;
   position: absolute;
+  cursor: url('/images/s9.png');
+
   h1 {
     background: linear-gradient(
       to right,
