@@ -32,6 +32,7 @@ export const Inner = styled.div`
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  opacity: 0.3;
 `;
 
 class Image extends Component {

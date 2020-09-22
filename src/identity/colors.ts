@@ -1,7 +1,8 @@
 import { css } from 'styled-components';
 
 export const colors = css`
-  --blue: #bcdeee;
+  --blue: #a8d1e4;
+  --blue-medium: #5783a2;
   --blue-dark: #27314a;
   --green: #def2f0;
   --red: #fdddcf;

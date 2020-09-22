@@ -1,5 +1,5 @@
-import $ from 'jquery';
 
+var $ = function(id) { return document.getElementById(id); };
 function debug( text )
 {
     //var element = document.createElement( "LI" ); 
@@ -27,14 +27,17 @@ var _wave_upload_count = 0, _wave_upload_data = [], _wave_upload_size = 0;
 
 function _on_midi_success( midiAccess )
 {
+    console.log(midiAccess);
     midiAccess.onstatechange = _on_midi_connect;
-    var event = new Object();
-    event.currentTarget = midiAccess;
+    var event = {
+        currentTarget: midiAccess
+    };
     _on_midi_connect( event );
 }
 
 function _on_midi_failure( error )
 {
+    console.log('on midi failure', error)
     //document.write( "MIDI access denied." );
     $('message').innerHTML = "MIDI access blocked by Chrome";
 }
@@ -45,6 +48,7 @@ function _on_midi_connect( event )
     var midi_inputs  = event.currentTarget.inputs.values ();
     var midi_outputs = event.currentTarget.outputs.values();
 
+    console.log('on midi connect', event)
     _ready = false;;
 
     //console.log( midi_inputs );
@@ -88,7 +92,9 @@ function _on_midi_connect( event )
             _midi_output_port = port.value;
             $('message').innerHTML = "(Detected but not responding)";
     }}
+    if (_midi_output_port) {
     _midi_output_port.send( _prop_to_midi( [0x0001,0,0,0,0,0] ));
+    }
 }
 
 function array_to_ui1  ( a ) { return a[0]; }

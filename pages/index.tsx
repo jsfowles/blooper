@@ -1,11 +1,12 @@
 // @ts-nocheck
 import React from 'react';
 import { Container, Row } from '@identity/grid';
-
+import Link from 'next/link';
 import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
 import Image from '../src/components/Image/index';
 import Element from '../src/components/Element/index';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 const IMAGES = [
   '/images/s2.png',
   '/images/s3.png',
@@ -44,30 +45,18 @@ export const Wrapper = styled.div`
   width: 100vw;
   display: flex;
   justify-content: center;
+  margin: 0 auto;
   padding-bottom: 10%;
   align-items: center;
   position: absolute;
-  cursor: url('/images/s9.png');
+  width: 100%;
+  z-index: 10;
 
-  h1 {
-    background: linear-gradient(
-      to right,
-      var(--blue-dark) 0%,
-      var(--green) 50%,
-      var(--blue) 50%
-    );
-    line-height: initial;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 14vw;
-    text-align: center;
-    width: 100%;
+  img {
+    top: 10%;
+    bottom: 0;
     position: fixed;
-    right: 0;
-    left: 0;
-    z-index: 10;
-    overflow: hidden;
+    width: 50vw;
   }
 `;
 
@@ -85,7 +74,18 @@ const Home = () => {
   return (
     <>
       <Wrapper>
-        <h1>blooper</h1>
+        <motion.img
+          initial={{ opacity: 0, y: 80 }}
+          animate={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              duration: 2,
+            },
+          }}
+          exit={{ opacity: 0 }}
+          src="/images/blooper-front.png"
+        />
       </Wrapper>
 
       <div style={{ overflow: 'hidden' }}>

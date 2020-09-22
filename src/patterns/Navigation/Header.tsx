@@ -1,24 +1,24 @@
 // @ts-nocheck
-import React from 'react';
-
+import React, { useState } from 'react';
+import Link from 'next/link';
 import { NavItems } from '@patterns/Navigation';
-import { Nav, Menu } from './styles/HeaderStyles';
+
+import {
+  Nav,
+  Menu,
+  ButtonDiv,
+  Hamburger,
+  Line,
+  PopUpMenu,
+} from './styles/HeaderStyles';
 import { useScrollData } from 'scroll-data-hook';
 // import Logo from '@components/Logo';
 import { TypeScale } from '../../identity/type';
-
-const sidebar = {
-  open: (height = 1000) => ({
-    clipPath: `polygon(0 0,100% 0,100% 80px,92% 30px,85% 140px,67% 45px,0 80px)`,
-    transition: {},
-  }),
-  closed: {
-    clipPath: 'polygon(0 0,100% 0,100% 80px,92% 80px,85% 80px,67% 80px,0 80px)',
-    transition: {},
-  },
-};
+import { parentEl } from '../../identity/motion';
+import { AnimatePresence } from 'framer-motion';
 
 const Header = () => {
+  const [openMenu, setOpenMenu] = useState(false);
   const {
     scrolling,
     time,
@@ -35,17 +35,38 @@ const Header = () => {
       console.log('Finished scrolling');
     },
   });
-  console.log(scrolling);
+
   return (
-    <Nav
-      scrollPosition={scrolling}
-      // initial="open"
-      // animate={scrolling ? 'open' : 'closed'}
-      // variants={sidebar}
-    >
+    <Nav>
       <Menu>
-        <TypeScale.H5 fontColor="white">chase bliss audio</TypeScale.H5>
-        <NavItems />
+        <Link passHref href="/">
+          <a>
+            <TypeScale.H1>blooper</TypeScale.H1>
+          </a>
+        </Link>
+        <Hamburger
+          onHoverStart={() => setOpenMenu(true)}
+          onHoverEnd={() => setOpenMenu(false)}
+        >
+          <Line />
+          <Line />
+          <Line />
+          <AnimatePresence initial={false}>
+            {openMenu && (
+              <PopUpMenu
+                key="menu"
+                initial="hidden"
+                animate="visible"
+                exit="hidden"
+                variants={parentEl(0, 0)}
+              >
+                <Link passHref href="/firmware">
+                  <NavItems />
+                </Link>
+              </PopUpMenu>
+            )}
+          </AnimatePresence>
+        </Hamburger>
       </Menu>
     </Nav>
   );

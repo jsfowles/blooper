@@ -1,4 +1,6 @@
+// @ts-nocheck
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 import { typeScale } from './typeScale';
 import { SpacingSetting } from './spacing';
@@ -33,7 +35,7 @@ const typeMapper = (scale: Scale) =>
   Object.keys(scale).reduce(
     (typeObject, el) => ({
       ...typeObject,
-      [el]: styled(el.toLowerCase() as Element)<Props>(
+      [el]: styled(motion[el.toLowerCase()])<Props>(
         ({ theme, space }) => space && theme.spacing(space),
         ({
           theme,

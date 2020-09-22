@@ -54,6 +54,7 @@ export const GlobalStyles = createGlobalStyle`
 
   main {
     flex: 1 0 auto;
+    padding-top: 80px;
   }
 
   header {
@@ -99,5 +100,12 @@ export const GlobalStyles = createGlobalStyle`
   html, body, #__next {
     height: 100%;
 
+  }
+
+  a {
+
+   color: inherit;
+    text-decoration: none;
+    cursor: pointer;
   }
 `;

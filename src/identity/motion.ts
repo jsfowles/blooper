@@ -25,6 +25,7 @@ export const parentEl = (staggerTime?: number, delayTime?: number) => {
     hidden: {
       opacity: 0,
       transition: {
+        when: 'beforeChildren',
         staggerChildren: 1,
         staggerDirection: -1,
       },
@@ -32,7 +33,8 @@ export const parentEl = (staggerTime?: number, delayTime?: number) => {
     visible: {
       opacity: 1,
       transition: {
-        duration: 0.25,
+        when: 'beforeChildren',
+        duration: 0.1,
         staggerChildren: staggerTime || 0.07,
         delayChildren: delayTime || 0,
       },

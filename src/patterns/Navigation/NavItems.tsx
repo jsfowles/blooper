@@ -1,22 +1,25 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { MenuItem } from './styles/NavItemsStyles';
+import { TypeScale } from '@identity/type';
 
 const NAV_ITEMS = [
-  { id: 1, title: 'Home', route: '/' },
-  { id: 2, title: 'Firmware', route: '/firmware' },
-  // { id: 3, title: 'About', route: '/about' },
-  // { id: 4, title: 'About', route: '/about' },
+  { id: 1, title: 'home', route: '/' },
+  { id: 2, title: 'firmware', route: '/firmware' },
+  { id: 2, title: 'manuals', route: '/manuals' },
 ];
 
 const NavItems = () => (
-  <motion.nav key="parent" style={{ display: 'flex' }}>
+  <motion.nav>
     {NAV_ITEMS.map(({ id, title, route }) => (
-      <motion.div key={id}>
+      <MenuItem>
         <Link href={route} passHref key={id}>
-          <a style={{ padding: '0 20px' }}>{title}</a>
+          <a style={{ padding: '0 20px' }}>
+            <TypeScale.P>{title}</TypeScale.P>
+          </a>
         </Link>
-      </motion.div>
+      </MenuItem>
     ))}
   </motion.nav>
 );
