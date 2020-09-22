@@ -52,11 +52,11 @@ export const Wrapper = styled.div`
   h1 {
     background: linear-gradient(
       to right,
-      var(--primary) 0%,
-      var(--primary-dark) 50%,
-      var(--primary-light) 100%
+      var(--blue-dark) 0%,
+      var(--green) 50%,
+      var(--blue) 50%
     );
-
+    line-height: initial;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

@@ -1,32 +1,15 @@
 import { css } from 'styled-components';
 
 export const colors = css`
-  --primary-light: #acd2e4;
-  --primary: #27314a;
-  --primary-dark: #0098be;
+  --blue: #bcdeee;
+  --blue-dark: #27314a;
+  --green: #def2f0;
+  --red: #fdddcf;
+  --yellow: #fffbcc;
 
-  --secondary-light: #4ac7c1;
-  --secondary-: #00b2a9;
-  --secondary-dark: #03a39c;
-
-  --warning-light: #ff985d;
-  --warning-: #ff8038;
-  --warning-dark: #ea6d27;
-
-  --error-light: #e80e41;
-  --error-: #d50032;
-  --error-dark: #c20431;
-
-  --black01: #1d252d;
-  --black02: #333f48;
-  --black03: #5b6770;
-  --black04: #7c878e;
-  --black05: #8d96a0;
-  --black06: #bbc5cf;
-  --black07: #cdd7e1;
-  --black08: #d9e1e9;
-  --black09: #f3f7fa;
-
+  --gray: #f2f3f4;
+  --grey-dark: #e6e7e9;
+  --black: #1d252d;
   --white: #ffffff;
 `;
 

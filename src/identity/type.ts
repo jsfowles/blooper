@@ -43,7 +43,7 @@ const typeMapper = (scale: Scale) =>
           textAlign,
           uppercase,
         }) => `
-          color:  ${theme.colors[fontColor] || theme.uiColors.fontColorBase};
+          color:  ${fontColor};
           font-size: ${scale[el].BASE && remCalc(scale[el].BASE)};
           font-weight: ${fontWeight || scale[el].FONT_WEIGHT};
           line-height: ${lineHeight || scale[el].LINE_HEIGHT};

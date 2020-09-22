@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const NAV_ITEMS = [
   { id: 1, title: 'Home', route: '/' },
-  { id: 2, title: 'About', route: '/about' },
+  { id: 2, title: 'Firmware', route: '/firmware' },
   // { id: 3, title: 'About', route: '/about' },
   // { id: 4, title: 'About', route: '/about' },
 ];

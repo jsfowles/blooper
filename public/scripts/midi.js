@@ -48,7 +48,7 @@ function _on_midi_connect( event )
     _ready = false;;
 
     //console.log( midi_inputs );
-    document.querySelector('message').innerHTML = "(Not detected)";
+    $('message').innerHTML = "(Not detected)";
 
     $('update').disabled = true;
     for( var session = 1; session <= 16; ++session ) {

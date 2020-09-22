@@ -11,7 +11,7 @@ interface Props {
 const Layout = ({ children }: Props) => {
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <ParallaxProvider>{children}</ParallaxProvider>
       {/* <Footer /> */}
     </>
