@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+// @ts-nocheck
+import React from 'react';
 import Popup from 'reactjs-popup';
 import styled from 'styled-components';
 import { MdPictureAsPdf, MdOpenInBrowser } from 'react-icons/md';
@@ -22,7 +23,6 @@ const StyledPopup = styled(Popup)`
 `;
 
 const Downloads = () => {
-  const [openPdf, setOpenPdf] = useState(false);
   return (
     <div
       style={{
