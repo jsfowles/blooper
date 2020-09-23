@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 export const PopUpMenu = styled(motion.div)`
   position: absolute;
   top: 40px;
-  right: 0;
+  right: 40px;
   padding: 32px;
   background: var(--green);
   border-radius: 20px;
@@ -69,7 +69,7 @@ export const Line = styled.span`
 export const Hamburger = styled(motion.button)`
   width: max-content;
   position: absolute;
-  top: 40px;
+  top: 45px;
   right: 7vw;
   background: transparent;
   border: none;

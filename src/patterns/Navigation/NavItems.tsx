@@ -16,7 +16,7 @@ const NavItems = ({ setOpenMenu }) => (
     {NAV_ITEMS.map(({ id, title, route }) => (
       <MenuItem>
         <Link href={route} passHref key={id}>
-          <a style={{ padding: '0 20px' }}>
+          <a>
             <TypeScale.P onClick={() => setOpenMenu(false)}>
               {title}
             </TypeScale.P>
