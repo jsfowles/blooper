@@ -9,8 +9,8 @@ export const PopUpMenu = styled(motion.div)`
   background: var(--green);
   border-radius: 20px;
   background-color: var(--white);
-  border: 1px solid var(--gray);
-  box-shadow: 9px 9px 16px rgb(163, 177, 198, 0.3),
+  /* border: 1px solid var(--gray); */
+  box-shadow: 5px 5px 16px rgb(163, 177, 198, 0.3),
     -9px -9px 16px rgba(255, 255, 255, 1);
 `;
 

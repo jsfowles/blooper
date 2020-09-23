@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { NavItems } from '@patterns/Navigation';
+import { useMediaQuery } from 'react-responsive';
 
 import {
   Nav,
@@ -27,13 +28,10 @@ const Header = () => {
     position,
     relativeDistance,
     totalDistance,
-  } = useScrollData({
-    onScrollStart: () => {
-      console.log('Started scrolling');
-    },
-    onScrollEnd: () => {
-      console.log('Finished scrolling');
-    },
+  } = useScrollData();
+
+  const isMobile = useMediaQuery({
+    query: '(max-device-width: 768px)',
   });
 
   return (
@@ -45,8 +43,21 @@ const Header = () => {
           </a>
         </Link>
         <Hamburger
-          onHoverStart={() => setOpenMenu(true)}
-          onHoverEnd={() => setOpenMenu(false)}
+          onClick={() => {
+            if (isMobile) {
+              setOpenMenu(!openMenu);
+            }
+          }}
+          onHoverStart={() => {
+            if (!isMobile) {
+              setOpenMenu(true);
+            }
+          }}
+          onHoverEnd={() => {
+            if (!isMobile) {
+              setOpenMenu(false);
+            }
+          }}
         >
           <Line />
           <Line />
@@ -61,7 +72,7 @@ const Header = () => {
                 variants={parentEl(0, 0)}
               >
                 <Link passHref href="/firmware">
-                  <NavItems />
+                  <NavItems setOpenMenu={setOpenMenu} />
                 </Link>
               </PopUpMenu>
             )}

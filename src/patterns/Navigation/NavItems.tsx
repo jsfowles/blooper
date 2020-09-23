@@ -10,13 +10,15 @@ const NAV_ITEMS = [
   { id: 2, title: 'manuals', route: '/manuals' },
 ];
 
-const NavItems = () => (
+const NavItems = ({ setOpenMenu }) => (
   <motion.nav>
     {NAV_ITEMS.map(({ id, title, route }) => (
       <MenuItem>
         <Link href={route} passHref key={id}>
           <a style={{ padding: '0 20px' }}>
-            <TypeScale.P>{title}</TypeScale.P>
+            <TypeScale.P onClick={() => setOpenMenu(false)}>
+              {title}
+            </TypeScale.P>
           </a>
         </Link>
       </MenuItem>

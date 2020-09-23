@@ -53,10 +53,16 @@ export const Wrapper = styled.div`
   z-index: 10;
 
   img {
-    top: 10%;
+    top: 20%;
     bottom: 0;
     position: fixed;
-    width: 50vw;
+    object-fit: contain;
+    width: 150%;
+
+    ${props => props.theme.breakpoints.TABLET} {
+      top: 7vh;
+      width: 90vh;
+    }
   }
 `;
 
