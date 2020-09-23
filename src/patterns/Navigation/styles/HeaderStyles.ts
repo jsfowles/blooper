@@ -4,13 +4,13 @@ import { motion } from 'framer-motion';
 export const PopUpMenu = styled(motion.div)`
   position: absolute;
   top: 40px;
-  right: 40px;
+  right: 0;
   padding: 32px;
   background: var(--green);
   border-radius: 20px;
   background-color: var(--white);
-  /* border: 1px solid var(--gray); */
-  box-shadow: 5px 5px 16px rgb(163, 177, 198, 0.3),
+  border: 1px solid var(--gray);
+  box-shadow: 9px 9px 16px rgb(163, 177, 198, 0.3),
     -9px -9px 16px rgba(255, 255, 255, 1);
 `;
 
@@ -74,7 +74,7 @@ export const Hamburger = styled(motion.button)`
   background: transparent;
   border: none;
   z-index: 9999;
-
+  padding: 0;
   :hover {
     ${Line} {
       background: var(--blue);
@@ -84,8 +84,8 @@ export const Hamburger = styled(motion.button)`
     z-index: 9999;
     content: '';
     position: absolute;
-    width: 28;
-    height: 28;
+    width: 28px;
+    height: 28px;
     border: transparent;
     top: -2px;
     right: 0;

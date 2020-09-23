@@ -6,10 +6,9 @@ const Firmware = () => {
     <div
       id="main"
       style={{
-        paddingTop: '20px',
-        paddingRight: '10px',
-        paddingBottom: '10px',
-        paddingLeft: '30px',
+        padding: '7vh 7vw',
+        margin: '0 auto',
+        width: 'max-content',
       }}
     >
       <div
