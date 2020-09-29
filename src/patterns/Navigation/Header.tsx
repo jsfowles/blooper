@@ -39,45 +39,13 @@ const Header = () => {
       <Menu>
         <Link passHref href="/">
           <a>
-            <TypeScale.H1>blooper</TypeScale.H1>
+            <TypeScale.P>CHASE BLISS AUDIO</TypeScale.P>
           </a>
         </Link>
-        <Hamburger
-          onClick={() => {
-            if (isMobile) {
-              setOpenMenu(!openMenu);
-            }
-          }}
-          onHoverStart={() => {
-            if (!isMobile) {
-              setOpenMenu(true);
-            }
-          }}
-          onHoverEnd={() => {
-            if (!isMobile) {
-              setOpenMenu(false);
-            }
-          }}
-        >
-          <Line />
-          <Line />
-          <Line />
-          <AnimatePresence initial={false}>
-            {openMenu && (
-              <PopUpMenu
-                key="menu"
-                initial="hidden"
-                animate="visible"
-                exit="hidden"
-                variants={parentEl(0, 0)}
-              >
-                <Link passHref href="/firmware">
-                  <NavItems setOpenMenu={setOpenMenu} />
-                </Link>
-              </PopUpMenu>
-            )}
-          </AnimatePresence>
-        </Hamburger>
+
+        <Link passHref href="/firmware">
+          <NavItems setOpenMenu={setOpenMenu} />
+        </Link>
       </Menu>
     </Nav>
   );

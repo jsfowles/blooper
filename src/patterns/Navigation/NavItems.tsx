@@ -7,6 +7,7 @@ import { TypeScale } from '@identity/type';
 
 const NAV_ITEMS = [
   { id: 1, title: 'home', route: '/' },
+  { id: 2, title: 'videos', route: '/videos' },
   { id: 2, title: 'firmware', route: '/firmware' },
   { id: 2, title: 'downloads', route: '/downloads' },
 ];

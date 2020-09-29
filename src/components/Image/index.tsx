@@ -47,7 +47,6 @@ class Image extends Component {
   };
 
   render() {
-    console.log(this.props.src, 'there');
     return (
       <ImageWrapper>
         <Inner>
