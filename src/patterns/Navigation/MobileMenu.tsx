@@ -1,4 +1,4 @@
-// @ts-ignore
+// @ts-nocheck
 import React, { useState } from 'react';
 import Burger from '@animated-burgers/burger-squeeze';
 import { AnimatePresence } from 'framer-motion';
