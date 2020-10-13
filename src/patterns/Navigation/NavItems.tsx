@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { MenuItem } from './styles/NavItemsStyles';
+import { MenuItem, NavItemsWrapper } from './styles/NavItemsStyles';
 import { TypeScale } from '@identity/type';
 
 const NAV_ITEMS = [
@@ -12,10 +12,15 @@ const NAV_ITEMS = [
   { id: 2, title: 'downloads', route: '/downloads' },
 ];
 
-const NavItems = ({ setOpenMenu }) => (
-  <motion.nav>
+const item = {
+  open: { opacity: 1, y: 0, x: 0 },
+  closed: { opacity: 0, y: -20, x: -10 },
+};
+
+const NavItems = ({ setOpenMenu, isMobile }) => (
+  <NavItemsWrapper isMobile={isMobile}>
     {NAV_ITEMS.map(({ id, title, route }) => (
-      <MenuItem>
+      <MenuItem variants={item}>
         <Link href={route} passHref key={id}>
           <a>
             <TypeScale.P onClick={() => setOpenMenu(false)}>
@@ -25,7 +30,7 @@ const NavItems = ({ setOpenMenu }) => (
         </Link>
       </MenuItem>
     ))}
-  </motion.nav>
+  </NavItemsWrapper>
 );
 
 export default NavItems;

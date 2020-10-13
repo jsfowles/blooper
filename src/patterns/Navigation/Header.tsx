@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { NavItems } from '@patterns/Navigation';
+import { NavItems, MobileMenu } from '@patterns/Navigation';
 import { useMediaQuery } from 'react-responsive';
 
 import {
@@ -19,7 +19,6 @@ import { parentEl } from '../../identity/motion';
 import { AnimatePresence } from 'framer-motion';
 
 const Header = () => {
-  const [openMenu, setOpenMenu] = useState(false);
   const {
     scrolling,
     time,
@@ -42,10 +41,7 @@ const Header = () => {
             <TypeScale.P>CHASE BLISS AUDIO</TypeScale.P>
           </a>
         </Link>
-
-        <Link passHref href="/firmware">
-          <NavItems setOpenMenu={setOpenMenu} />
-        </Link>
+        {isMobile ? <MobileMenu /> : <NavItems />}
       </Menu>
     </Nav>
   );

@@ -3,6 +3,7 @@ import App from 'next/app';
 import Head from 'next/head';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ThemeProvider } from 'styled-components';
+import '@animated-burgers/burger-squeeze/dist/styles.css';
 
 import Layout from '@components/Layout';
 import * as theme from '@identity/index';

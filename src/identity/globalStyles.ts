@@ -108,4 +108,8 @@ export const GlobalStyles = createGlobalStyle`
     text-decoration: none;
     cursor: pointer;
   }
+  
+  .burger .burger-lines,
+.burger .burger-lines:after,
+.burger .burger-lines:before { background-color: #a8d1e4; }
 `;
