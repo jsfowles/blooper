@@ -9,9 +9,11 @@ export const Nav = styled(motion.nav)`
   left: 0;
   right: 0;
   z-index: 9999;
+  background: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0px 2px 5px 0px rgba(50, 50, 50, 0.1);
 `;
 
 export const Menu = styled(motion.header)`

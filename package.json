@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@agney/react-loading": "^0.1.2",
     "@animated-burgers/burger-squeeze": "^1.1.2",
     "@apollo/react-hooks": "^4.0.0",
     "@types/lodash": "^4.14.161",
@@ -25,6 +26,7 @@
     "react-apollo": "^3.1.5",
     "react-dom": "^16.13.1",
     "react-icons": "^3.11.0",
+    "react-player": "^2.6.2",
     "react-responsive": "^8.1.0",
     "react-scroll-parallax": "^2.3.4",
     "reactjs-popup": "^2.0.3",

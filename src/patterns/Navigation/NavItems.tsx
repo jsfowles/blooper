@@ -7,7 +7,7 @@ import { TypeScale } from '@identity/type';
 
 const NAV_ITEMS = [
   { id: 1, title: 'home', route: '/' },
-  { id: 2, title: 'videos', route: '/videos' },
+  { id: 2, title: 'media', route: '/media' },
   { id: 2, title: 'firmware', route: '/firmware' },
   { id: 2, title: 'downloads', route: '/downloads' },
 ];
@@ -23,7 +23,13 @@ const NavItems = ({ setOpenMenu, isMobile }) => (
       <MenuItem variants={item}>
         <Link href={route} passHref key={id}>
           <a>
-            <TypeScale.P onClick={() => setOpenMenu(false)}>
+            <TypeScale.P
+              onClick={() => {
+                if (isMobile) {
+                  setOpenMenu(false);
+                }
+              }}
+            >
               {title}
             </TypeScale.P>
           </a>
