@@ -1,35 +1,34 @@
 import { round } from 'lodash';
 
-const EXTERNAL_REGEX = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
-
 export const targetForUrl = (href?: string): string => {
-  if (href) {
-    const matches = href.match(EXTERNAL_REGEX);
-
-    if (typeof window !== 'undefined') {
-      return matches &&
-        matches.length &&
-        !href.includes(window.location.hostname)
-        ? '_blank'
-        : '';
-    }
-  }
-
-  return '';
+  return determineExternalLink(href) ? '_blank' : '';
 };
 
-export const determineExternalLink = (href?: string): boolean | undefined => {
+export const determineExternalLink = (href?: string): boolean => {
   if (href) {
-    const matches = href.match(EXTERNAL_REGEX);
+    if (href.startsWith('/')) {
+      return false;
+    }
     if (typeof window !== 'undefined') {
-      return matches &&
-        matches.length &&
-        !href.includes(window.location.hostname)
-        ? true
-        : false;
+      return !href.startsWith(window.location.origin);
     }
   }
+  return false;
 };
 
 export const remCalc = (pixelValue: number, baseValue: number = 16) =>
   `${round(pixelValue / baseValue, 2)}rem`;
+
+const formatExpNot = (value: number, decimals = 2) =>
+  Number(`${value}e${decimals}`);
+
+export const viewCalc = (
+  pixelValue: number,
+  viewDirection: string = 'vw',
+  baseValue: number = 1680,
+  decimals: number = 2,
+) =>
+  `${formatExpNot(
+    Math.round(formatExpNot((pixelValue / baseValue) * 100, decimals)),
+    decimals * -1,
+  )}${viewDirection}`;

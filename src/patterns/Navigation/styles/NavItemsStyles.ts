@@ -31,7 +31,7 @@ export const NavItemsWrapper = styled(motion.ul)`
   ${props => props.theme.breakpoints.TABLET} {
     height: initial;
     justify-content: space-between;
-    max-width: 400px;
+    max-width: 450px;
     flex-direction: row;
     padding: initial;
 

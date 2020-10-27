@@ -6,7 +6,7 @@ import { MenuItem, NavItemsWrapper } from './styles/NavItemsStyles';
 import { TypeScale } from '@identity/type';
 
 const NAV_ITEMS = [
-  { id: 1, title: 'home', route: '/' },
+  { id: 1, title: 'bloop troop', route: '/bloop-troop' },
   { id: 2, title: 'media', route: '/media' },
   { id: 2, title: 'firmware', route: '/firmware' },
   { id: 2, title: 'downloads', route: '/downloads' },

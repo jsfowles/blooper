@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 export const Overlay = styled(motion.div)`
-  background-color: #ffffffdd;
+  background-color: #fffffff6;
   position: absolute;
   height: 100vh;
   top: 0;

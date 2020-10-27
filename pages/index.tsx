@@ -7,6 +7,7 @@ import Image from '../src/components/Image/index';
 import Element from '../src/components/Element/index';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import TroopCarousel from '@components/TroopCarousel';
 const IMAGES = [
   '/images/s2.png',
   '/images/s3.png',
@@ -41,9 +42,8 @@ const IMAGES = [
 ];
 
 export const Wrapper = styled.div`
-  height: 100vh;
-  width: 100vw;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   margin: 0 auto;
   padding-bottom: 10%;
@@ -53,14 +53,12 @@ export const Wrapper = styled.div`
   z-index: 10;
 
   img {
-    top: 20%;
+    //top: 20%;
     bottom: 0;
-    position: fixed;
     object-fit: contain;
     width: 150%;
 
     ${props => props.theme.breakpoints.TABLET} {
-      top: 7vh;
       width: 90vh;
     }
   }
@@ -86,12 +84,13 @@ const Home = () => {
             opacity: 1,
             y: 0,
             transition: {
-              duration: 2,
+              duration: 1.5,
             },
           }}
           exit={{ opacity: 0 }}
           src="/images/blooper-front.png"
         />
+        <TroopCarousel />
       </Wrapper>
 
       <div style={{ overflow: 'hidden' }}>
