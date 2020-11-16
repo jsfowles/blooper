@@ -28,7 +28,7 @@ const Block = ({ id, heading, paragraph, route, bg }: Props) => {
           key={id}
           bg={bg}
           isOdd={isOdd}
-          whileHover={{ scale: 1.2, x: isOdd ? 100 : -100 }}
+          whileHover={{ scale: 1.2, x: isOdd ? '20%' : '-20%' }}
           transition={{ type: 'spring', mass: 0.5 }}
         >
           <motion.h2>{heading}</motion.h2>

@@ -20,7 +20,7 @@ export const BlockWrapper = styled(motion.div)<StyleProps>`
   }
   p {
     font-size: 24px;
-    max-width: 56ch;
+    max-width: 40ch;
   }
 
   img {
