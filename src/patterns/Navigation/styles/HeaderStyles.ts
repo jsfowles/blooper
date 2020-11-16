@@ -25,6 +25,9 @@ export const Menu = styled(motion.header)`
 
   img {
     margin-top: 2vh;
-    width: 80px;
+    width: 40px;
+    ${props => props.theme.breakpoints.TABLET} {
+      width: 80px;
+    }
   }
 `;

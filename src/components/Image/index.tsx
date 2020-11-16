@@ -16,13 +16,13 @@ const Image = ({ src, alt, ...props }: Props) => {
   });
 
   return (
-    <motion.div
+    <motion.figure
       ref={ref}
       initial={{ opacity: 0 }}
       animate={animate ? { opacity: 1 } : { opacity: 0 }}
     >
       <motion.img {...props} src={src} alt={alt} />
-    </motion.div>
+    </motion.figure>
   );
 };
 

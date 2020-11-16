@@ -24,7 +24,7 @@ const Home = () => {
     <div>
       <Scribbles>
         <Content>
-          <Image src="/images/blooper-front.png" className="pedal" />
+          <Image src="/images/blooper-front.png" />
           <motion.h1>blooper</motion.h1>
           <div style={{ position: 'relative' }}>
             <motion.p>
