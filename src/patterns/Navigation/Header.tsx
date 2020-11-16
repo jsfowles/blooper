@@ -4,9 +4,8 @@ import Link from 'next/link';
 import { NavItems, MobileMenu } from '@patterns/Navigation';
 import { useMediaQuery } from 'react-responsive';
 
-import { Nav, Menu } from './styles/HeaderStyles';
+import { Menu } from './styles/HeaderStyles';
 import Image from '@components/Image';
-import { TypeScale } from '@identity/type';
 
 const Header = () => {
   const isMobile = useMediaQuery({
@@ -27,21 +26,19 @@ const Header = () => {
   }, [offset]);
 
   return (
-    <Nav>
-      <Menu>
-        <Link passHref href="/">
-          <Image
-            whileHover={{ scale: 1.1 }}
-            src="/images/s1.png"
-            transition={{ type: 'spring', stiffness: 60 }}
-            animate={{
-              rotate: offset * 0.1,
-            }}
-          />
-        </Link>
-        {isMobile ? <MobileMenu /> : <NavItems />}
-      </Menu>
-    </Nav>
+    <Menu>
+      <Link passHref href="/">
+        <Image
+          whileHover={{ scale: 1.1 }}
+          src="/images/s1.png"
+          transition={{ type: 'spring', stiffness: 60 }}
+          animate={{
+            rotate: offset * 0.1,
+          }}
+        />
+      </Link>
+      {isMobile ? <MobileMenu /> : <NavItems />}
+    </Menu>
   );
 };
 
