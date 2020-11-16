@@ -45,7 +45,11 @@ export default class MyDocument extends Document {
       <html>
         <Head>
           {/* <link rel="stylesheet" href="/scripts/midi-styles.css" /> */}
-          <link rel="stylesheet" href="https://use.typekit.net/aqg3dpk.css" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Sanchez&display=swap"
+            rel="stylesheet"
+          />
           <link rel="shortcut icon" href="../images/favicon.ico" />
           {/* <script type="text/javascript" src="/scripts/midi.js" key="scripts" /> */}
           <GlobalStyles />

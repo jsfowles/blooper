@@ -22,7 +22,7 @@ const StyledPopup = styled(Popup)`
   }
 `;
 
-const Downloads = () => {
+const Resources = () => {
   return (
     <div
       style={{
@@ -131,4 +131,4 @@ const Downloads = () => {
   );
 };
 
-export default Downloads;
+export default Resources;

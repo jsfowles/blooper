@@ -50,6 +50,9 @@
       "@lib/*": [
         "src/lib/*"
       ],
+      "@hooks/*": [
+        "src/hooks/*"
+      ],
       "@patterns/*": [
         "src/patterns/*"
       ],

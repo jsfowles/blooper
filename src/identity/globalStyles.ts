@@ -20,6 +20,7 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     scroll-behavior: smooth;
     touch-action: manipulation;
+        background: #ffffff;
   }
 
   * {
@@ -67,10 +68,11 @@ export const GlobalStyles = createGlobalStyle`
     z-index: 1000;
   }
 
+    p {
+    line-height: 1.25;
+    }
   body {
-    line-height: 1;
-
-    font-family: como, sans-serif;
+    font-family: 'Sanchez', san-serif;
     font-weight: 400;
     font-style: normal;
     position: relative;
@@ -99,17 +101,17 @@ export const GlobalStyles = createGlobalStyle`
 
   html, body, #__next {
     height: 100%;
-
   }
 
   a {
-
    color: inherit;
     text-decoration: none;
     cursor: pointer;
   }
   
+  
   .burger .burger-lines,
 .burger .burger-lines:after,
 .burger .burger-lines:before { background-color: #a8d1e4; }
+
 `;

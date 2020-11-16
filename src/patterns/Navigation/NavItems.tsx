@@ -1,15 +1,14 @@
 // @ts-nocheck
 import React from 'react';
-import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { MenuItem, NavItemsWrapper } from './styles/NavItemsStyles';
 import { TypeScale } from '@identity/type';
 
 const NAV_ITEMS = [
-  { id: 1, title: 'bloop troop', route: '/bloop-troop' },
-  { id: 2, title: 'media', route: '/media' },
-  { id: 2, title: 'firmware', route: '/firmware' },
-  { id: 2, title: 'downloads', route: '/downloads' },
+  { id: 1, title: 'resources', route: '/resources' },
+  { id: 2, title: 'modifiers', route: '/modifiers' },
+  { id: 2, title: 'interface', route: '/interface' },
+  { id: 2, title: 'FAQ', route: '/faq' },
 ];
 
 const item = {

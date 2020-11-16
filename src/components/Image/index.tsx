@@ -1,60 +1,29 @@
-// @ts-nocheck
-import React, { Component } from 'react';
+import React from 'react';
+import useMotionTrigger from '@hooks/useMotionTrigger';
+import { observerThreshold } from '@identity/motion';
+import { motion } from 'framer-motion';
 
-import PropTypes from 'prop-types';
-import { withController } from 'react-scroll-parallax';
-
-import styled from 'styled-components';
-
-export const ImageWrapper = styled.figure`
-  display: flex;
-  position: relative;
-  width: 100%;
-  height: 0;
-  padding-top: 50%;
-  overflow: hidden;
-  img {
-    overflow: hidden;
-
-    display: block;
-    width: 220px;
-    height: auto;
-  }
-`;
-
-export const Inner = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  opacity: 0.3;
-`;
-
-class Image extends Component {
-  static propTypes = {
-    parallaxController: PropTypes.object.isRequired,
-    src: PropTypes.string.isRequired,
-  };
-
-  handleLoad = () => {
-    // updates cached values after image dimensions have loaded
-    this.props.parallaxController.update();
-  };
-
-  render() {
-    return (
-      <ImageWrapper>
-        <Inner>
-          <img src={this.props.src} onLoad={this.handleLoad} />
-        </Inner>
-      </ImageWrapper>
-    );
-  }
+interface Props {
+  src?: string;
+  alt?: string;
+  [key: string]: any;
 }
 
-export default withController(Image);
+const Image = ({ src, alt, ...props }: Props) => {
+  const [ref, animate] = useMotionTrigger({
+    threshold: observerThreshold.XS,
+    triggerOnce: true,
+  });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0 }}
+      animate={animate ? { opacity: 1 } : { opacity: 0 }}
+    >
+      <motion.img {...props} src={src} alt={alt} />
+    </motion.div>
+  );
+};
+
+export default Image;

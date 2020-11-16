@@ -1,7 +1,7 @@
 import React from 'react';
 import TroopCarousel from '@components/TroopCarousel';
 
-const BloopTroop = () => {
+const Modifiers = () => {
   return (
     <>
       <TroopCarousel />
@@ -9,4 +9,4 @@ const BloopTroop = () => {
   );
 };
 
-export default BloopTroop;
+export default Modifiers;

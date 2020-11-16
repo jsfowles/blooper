@@ -1,28 +1,13 @@
 import { css } from 'styled-components';
 
 export const colors = css`
-  --blue: #a8d1e4;
-  --blue-medium: #5783a2;
-  --blue-dark: #27314a;
-  --green: #def2f0;
-  --red: #fdddcf;
-  --yellow: #fffbcc;
+  --primary: #cbdce3;
+  --primary-1: #e7ecef;
+  --primary-2: #f9f9f7;
+  --primary-3: #d4e0e0;
 
-  --gray: #f2f3f4;
-  --grey-dark: #e6e7e9;
   --black: #1d252d;
   --white: #ffffff;
 `;
 
-export const uiColors = css`
-  --font-color-base: var(--black01);
-
-  --link-color: var(--primary-dark);
-  --link-color-hover: var(--primary-light);
-  --link-color-focus: var(--primary-light);
-
-  --media-loading-background: var(--black09);
-
-  --blockquote: var(--black09);
-  --border-color: var(--black08);
-`;
+export const uiColors = css``;

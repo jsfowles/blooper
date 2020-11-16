@@ -18,7 +18,6 @@ const Grid = styled(motion.section)`
 export const Header = styled(motion.h1)`
   padding-top: 10%;
   text-align: center;
-  text-transform: uppercase;
   font-size: 32px;
 
   ${props => props.theme.breakpoints.TABLET} {

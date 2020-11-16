@@ -5,13 +5,9 @@ export const MenuItem = styled(motion.li)`
   background: none;
   border: none;
   list-style: none;
-  p {
-    text-transform: uppercase;
 
-    transition: all 250ms ease;
-    :hover {
-      color: rgba(26, 26, 26, 0.4);
-    }
+  p {
+    font-size: 24px;
   }
 `;
 
@@ -23,21 +19,11 @@ export const NavItemsWrapper = styled(motion.ul)`
   align-items: flex-end;
   padding: 80px 14vw;
 
-  p {
-    font-size: 24px;
-    padding-bottom: 24px;
-  }
-
   ${props => props.theme.breakpoints.TABLET} {
     height: initial;
     justify-content: space-between;
-    max-width: 450px;
+    max-width: 500px;
     flex-direction: row;
     padding: initial;
-
-    p {
-      font-size: initial;
-      padding-bottom: initial;
-    }
   }
 `;

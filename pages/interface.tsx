@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React from 'react';
 
-const Firmware = () => {
+const Interface = () => {
   return (
     <div
       id="main"
@@ -2600,4 +2600,4 @@ const Firmware = () => {
   );
 };
 
-export default Firmware;
+export default Interface;

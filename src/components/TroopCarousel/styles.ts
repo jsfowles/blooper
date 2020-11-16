@@ -4,9 +4,6 @@ import styled from 'styled-components';
 import { viewCalc } from '@lib/helperMethods';
 
 export const StoriesWrapper = styled(motion.section)`
-  font-family: antarctican-mono;
-  text-transform: uppercase;
-
   display: flex;
   width: ${viewCalc(1520)};
   padding-top: 5%;
@@ -27,7 +24,6 @@ export const Bloop = styled(motion.li)`
 export const Header = styled(motion.h1)`
   padding-top: 10%;
   text-align: center;
-  text-transform: uppercase;
   font-size: 32px;
 
   ${props => props.theme.breakpoints.TABLET} {

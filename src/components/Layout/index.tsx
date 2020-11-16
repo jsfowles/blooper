@@ -12,8 +12,8 @@ const Layout = ({ children }: Props) => {
   return (
     <>
       <Header />
-      <ParallaxProvider>{children}</ParallaxProvider>
-      {/* <Footer /> */}
+      {children}
+      <Footer />
     </>
   );
 };
