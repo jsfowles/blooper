@@ -55,6 +55,7 @@ export const GlobalStyles = createGlobalStyle`
 
   main {
     flex: 1 0 auto;
+    //padding-top: 20px;
   }
 
   header {
