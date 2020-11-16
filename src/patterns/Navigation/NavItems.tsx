@@ -23,6 +23,7 @@ const NavItems = ({ setOpenMenu, isMobile }) => (
         <Link href={route} passHref key={id}>
           <a>
             <TypeScale.P
+              whileHover={{ scale: 1.1 }}
               onClick={() => {
                 if (isMobile) {
                   setOpenMenu(false);

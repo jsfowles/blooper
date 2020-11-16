@@ -6,6 +6,7 @@ import { useMediaQuery } from 'react-responsive';
 
 import { Nav, Menu } from './styles/HeaderStyles';
 import Image from '@components/Image';
+import { TypeScale } from '@identity/type';
 
 const Header = () => {
   const isMobile = useMediaQuery({
@@ -30,6 +31,7 @@ const Header = () => {
       <Menu>
         <Link passHref href="/">
           <Image
+            whileHover={{ scale: 1.1 }}
             src="/images/s1.png"
             transition={{ type: 'spring', stiffness: 60 }}
             animate={{
