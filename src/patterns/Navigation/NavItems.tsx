@@ -8,6 +8,7 @@ const NAV_ITEMS = [
   { id: 1, title: 'resources', route: '/resources' },
   { id: 2, title: 'modifiers', route: '/modifiers' },
   { id: 2, title: 'interface', route: '/interface' },
+  { id: 2, title: 'midi', route: '/midi' },
   { id: 2, title: 'FAQ', route: '/faq' },
 ];
 

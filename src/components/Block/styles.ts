@@ -16,11 +16,23 @@ export const BlockWrapper = styled(motion.div)<StyleProps>`
   text-align: left;
 
   h2 {
-    font-size: 64px;
+    display: inline-block;
+    font-size: 48px;
+    ${props => props.theme.breakpoints.TABLET} {
+      font-size: 64px;
+    }
+
+    svg {
+      margin-left: 25px;
+    }
   }
   p {
-    font-size: 24px;
+    font-size: 18px;
     max-width: 40ch;
+
+    ${props => props.theme.breakpoints.TABLET} {
+      font-size: 24px;
+    }
   }
 
   img {
@@ -31,5 +43,38 @@ export const BlockWrapper = styled(motion.div)<StyleProps>`
     padding: 120px 7vw;
     align-items: ${props => (!props.isOdd ? 'flex-end' : 'flex-start')};
     text-align: ${props => (!props.isOdd ? 'right' : 'left')};
+  }
+
+  button {
+    margin-top: 30px;
+    font-size: 16px;
+    padding: 14px;
+    background: none;
+    border: 2px solid black;
+    border-radius: 5px;
+
+    svg {
+      margin-left: 5px;
+    }
+  }
+`;
+
+export const Caret = styled(motion.div)`
+  :before {
+    content: '';
+    position: absolute;
+    right: 0;
+    border-top: 34px solid #ff0000;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+  }
+
+  :after {
+    content: '';
+    position: absolute;
+    right: 1px;
+    border-top: 29px solid #eeeeee;
+    border-left: 29px solid transparent;
+    border-right: 29px solid transparent;
   }
 `;
