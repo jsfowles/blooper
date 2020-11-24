@@ -51,6 +51,7 @@ export const LI = styled(motion.p)`
 
 export const Figure = styled(motion.figure)`
   display: flex;
+
   svg {
     height: 70vh;
   }

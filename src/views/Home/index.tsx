@@ -4,22 +4,10 @@ import Image from '@components/Image';
 import { motion } from 'framer-motion';
 import { DATA_BLOCKS } from '@views/Home/data';
 import Block from '@components/Block';
+import useOffset from '@hooks/useOffset';
 
 const Home = () => {
-  const [offset, setOffset] = React.useState(0);
-
-  React.useEffect(() => {
-    function handleScroll() {
-      setOffset(window.pageYOffset);
-    }
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [offset]);
-
+  const offset = useOffset();
   return (
     <div>
       <Scribbles>
@@ -28,7 +16,7 @@ const Home = () => {
           <motion.h1>blooper</motion.h1>
           <div style={{ position: 'relative' }}>
             <motion.p>
-              this is a website to help you enjoy a rich, reqarding time with
+              this is a website to help you enjoy a rich, regarding time with
               your blooper. it does a lot and it can get pretty weird. so, get
               familiar with its many tricks, or use the interface to update,
               download , and customize.
