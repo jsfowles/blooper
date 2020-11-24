@@ -1,7 +1,8 @@
+// @ts-nocheck
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { BlockWrapper, Caret } from '@components/Block/styles';
+import { BlockWrapper } from '@components/Block/styles';
 import { useMediaQuery } from 'react-responsive';
 
 interface Props {

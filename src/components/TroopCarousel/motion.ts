@@ -1,5 +1,3 @@
-import { motionTiming } from '@identity/motion';
-
 export const cardMotion = {
   visible: {
     opacity: 1,
