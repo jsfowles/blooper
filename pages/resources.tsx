@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { MdPictureAsPdf, MdOpenInBrowser } from 'react-icons/md';
 import { IconContext } from 'react-icons';
 import { TypeScale } from '@identity/type';
+import TextBlock from '@components/TextBlock';
 
 const StyledPopup = styled(Popup)`
   &-overlay {
@@ -28,12 +29,13 @@ const Resources = () => {
       style={{
         display: 'flex',
         width: '100%',
-        padding: '7vw',
+        padding: '0 7vw',
         margin: '0 auto',
         justifyContent: 'center',
         flexDirection: 'column',
       }}
     >
+      <TextBlock title="resources" />
       <div style={{ display: 'flex', alignItems: 'baseline' }}>
         <TypeScale.H2
           space={{ margin: 'bottom-md' }}

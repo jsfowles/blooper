@@ -1,16 +1,19 @@
 // @ts-nocheck
 import React from 'react';
+import TextBlock from '@components/TextBlock';
 
 const Interface = () => {
   return (
     <div
       id="main"
       style={{
-        padding: '7vh 7vw',
+        padding: '0 7vw',
         margin: '0 auto',
         width: 'max-content',
       }}
     >
+      <TextBlock title="interface" />
+
       <div
         style={{
           display: 'flex',

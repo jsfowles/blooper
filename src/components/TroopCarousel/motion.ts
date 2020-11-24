@@ -1,21 +1,30 @@
+import { motionTiming } from '@identity/motion';
+
 export const cardMotion = {
-  hidden: {
-    opacity: 0,
-    x: 100,
-    transition: {
-      duration: 0.5,
-    },
-  },
   visible: {
     opacity: 1,
-    x: 0,
     y: 0,
     transition: {
-      duration: 0.5,
+      ease: [0.17, 0.67, 0.83, 0.67],
+      delayChildren: 0.25,
+      staggerChildren: 0.07,
+      staggerDirection: 1,
     },
   },
-  exit: {
-    opacity: 1,
-    x: -100,
+  hidden: {
+    opacity: 0,
+    y: '-100vh',
+    transition: {
+      ease: [0.17, 0.67, 0.83, 0.67],
+      staggerChildren: 0.07,
+      staggerDirection: -1,
+      when: 'afterChildren',
+    },
   },
+};
+
+export const yoMotion = {
+  visible: { opacity: 1, y: 0, x: 0 },
+  hidden: { opacity: 0, y: -20, x: -10 },
+  exit: { opacity: 0 },
 };

@@ -1,10 +1,11 @@
 import React from 'react';
+import TextBlock from '@components/TextBlock';
 
 const FAQ = () => {
   return (
-    <div>
-      <p>FAQ</p>
-    </div>
+    <>
+      <TextBlock title="FAQ" />
+    </>
   );
 };
 

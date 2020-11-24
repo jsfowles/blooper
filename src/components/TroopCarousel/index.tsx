@@ -5,8 +5,8 @@ import { Header, Bloop, StoriesWrapper, Figure, Box } from './styles';
 import useArrowKeyFocus from './../../hooks/useArrowKeyFocus';
 import Item from './Items';
 import BloopTroop from '../BloopTroop';
-import { useAnimation } from 'framer-motion';
-import { cardMotion } from '@components/TroopCarousel/motion';
+import { AnimatePresence, useAnimation } from 'framer-motion';
+import { cardMotion, yoMotion } from '@components/TroopCarousel/motion';
 
 const DATA = [
   { id: 0, title: 'Smooth Speed', troopCard: <BloopTroop.SmoothBloop /> },
@@ -20,12 +20,6 @@ const DATA = [
 const TroopCarousel = () => {
   const [shiftIndex, setShiftIndex] = React.useState(0);
   const [focus, setFocus] = useArrowKeyFocus(DATA.length);
-  const controls = useAnimation();
-
-  controls.start({
-    opacity: 1,
-  });
-  controls.stop({ opacity: 0 });
 
   return (
     <>
@@ -48,18 +42,24 @@ const TroopCarousel = () => {
           ))}
         </Box>
 
-        <Box>
-          {DATA.map(({ id, title, troopCard }) => (
-            <Figure
-              initial="hidden"
-              animate={shiftIndex === id ? 'visible' : 'hidden'}
-              exit={shiftIndex !== id && 'exit'}
-              variants={cardMotion}
-            >
-              {shiftIndex === id && troopCard}
-            </Figure>
-          ))}
-        </Box>
+        <AnimatePresence exitBeforeEnter>
+          <Box
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            variant={cardMotion}
+          >
+            {DATA.map(({ id, title, troopCard }) => (
+              <>
+                {shiftIndex === id && (
+                  <Figure variants={yoMotion}>
+                    {shiftIndex === id && troopCard}
+                  </Figure>
+                )}
+              </>
+            ))}
+          </Box>
+        </AnimatePresence>
       </StoriesWrapper>
     </>
   );
