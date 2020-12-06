@@ -4,7 +4,7 @@ import TextBlock from '@components/TextBlock';
 const Midi = () => {
   return (
     <>
-      <TextBlock title="midi" />
+      <TextBlock />
     </>
   );
 };

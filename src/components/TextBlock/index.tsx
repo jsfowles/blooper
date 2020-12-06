@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 import { TextBlockWrapper } from './styles';
 
 interface Props {
-  heading: string;
-  description: string;
+  heading?: string;
+  description?: string;
 }
 
 const TextBlock = ({ heading, description }: Props) => {

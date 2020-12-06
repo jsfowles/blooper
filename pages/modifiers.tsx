@@ -6,7 +6,7 @@ import TextBlock from '@components/TextBlock';
 const Modifiers = () => {
   return (
     <>
-      <TextBlock title="modifiers" />
+      <TextBlock />
       <TroopCarousel />
     </>
   );

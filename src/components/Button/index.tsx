@@ -3,7 +3,10 @@ import { BtnWrapper } from './styles';
 
 import { FiArrowRight } from 'react-icons/fi';
 
-const Button = ({ children, ...props }) => {
+interface Props {
+  children: React.ReactNode;
+}
+const Button = ({ children }: Props) => {
   return (
     <BtnWrapper>
       {children}

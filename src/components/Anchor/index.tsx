@@ -24,12 +24,12 @@ const Anchor = ({ href, children, noBlank }: Props) => {
       </A>
     ) : (
       <Link href={href} passHref>
-        <A {...linkProps}>{children}</A>
+        <A style={{ color: 'initial' }} {...linkProps}>
+          {children}
+        </A>
       </Link>
     );
   }
-
-  return null;
 };
 
 Anchor.defaultProps = {

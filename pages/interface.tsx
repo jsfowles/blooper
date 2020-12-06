@@ -12,7 +12,7 @@ const Interface = () => {
         width: 'max-content',
       }}
     >
-      <TextBlock title="interface" />
+      <TextBlock />
 
       <div
         style={{

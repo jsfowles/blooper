@@ -1,8 +1,9 @@
+// @ts-nocheck
 import React from 'react';
 import { Scribbles, Content } from './styles';
 import Image from '@components/Image';
 import { motion } from 'framer-motion';
-import { DATA_BLOCKS } from '@views/Home/data';
+
 import Block from '@components/Block';
 import useOffset from '@hooks/useOffset';
 import { useQuery } from '@apollo/client';

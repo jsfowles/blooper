@@ -24,7 +24,7 @@ const Resources = () => {
   }
 
   const resourceBlocks = data.page.pageContentCollection.items.map(
-    (item, index) => ({
+    (item: any, index: number) => ({
       ...item,
       index,
       background: BG[index % BG.length],

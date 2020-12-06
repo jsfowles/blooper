@@ -15,8 +15,3 @@ export const A = styled.a(
     }
   `,
 );
-
-export const Hi = styled(motion.div)`
-  ${props => props.theme.breakpoints.mobile} {
-  }
-`;
