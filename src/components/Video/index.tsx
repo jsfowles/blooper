@@ -24,7 +24,7 @@ export const Ratio = styled(motion.div)`
 
 const Video = ({ url }) => {
   return (
-    <Wrapper variants={childEl('up', 20)}>
+    <Wrapper>
       <Ratio>
         <ReactPlayer url={url} />
       </Ratio>

@@ -1,5 +1,6 @@
 import Document, {
   DocumentContext,
+  Html,
   Head,
   Main,
   NextScript,
@@ -42,7 +43,7 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <html>
+      <Html>
         <Head>
           {/* <link rel="stylesheet" href="/scripts/midi-styles.css" /> */}
           <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -59,7 +60,7 @@ export default class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     );
   }
 }

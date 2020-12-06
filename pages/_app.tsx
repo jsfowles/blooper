@@ -1,26 +1,27 @@
 import * as React from 'react';
 import App from 'next/app';
+import withApollo from 'next-with-apollo';
 import Head from 'next/head';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ThemeProvider } from 'styled-components';
 import '@animated-burgers/burger-squeeze/dist/styles.css';
 
+import { createApolloClient } from '@lib/apollo';
 import Layout from '@components/Layout';
 import * as theme from '@identity/index';
 
 import { mainMotion } from '@components/Layout/motion';
+import { ApolloProvider } from '@apollo/client';
 
-class MyApp extends App {
-  render() {
-    const { Component, pageProps, router } = this.props;
+const MyApp = ({ Component, pageProps, router, apollo }) => {
+  return (
+    <ThemeProvider theme={theme}>
+      <Head>
+        <title>The Blooper</title>
+        <link rel="shortcut icon" type="image/x-icon" />
+      </Head>
 
-    return (
-      <ThemeProvider theme={theme}>
-        <Head>
-          <title>The Blooper</title>
-          <link rel="shortcut icon" type="image/x-icon" />
-        </Head>
-
+      <ApolloProvider client={apollo}>
         <Layout>
           <AnimatePresence exitBeforeEnter>
             <motion.main {...mainMotion} key={router.route}>
@@ -28,9 +29,9 @@ class MyApp extends App {
             </motion.main>
           </AnimatePresence>
         </Layout>
-      </ThemeProvider>
-    );
-  }
-}
+      </ApolloProvider>
+    </ThemeProvider>
+  );
+};
 
-export default MyApp;
+export default withApollo(createApolloClient)(MyApp);

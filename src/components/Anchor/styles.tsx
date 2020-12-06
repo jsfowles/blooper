@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const A = styled.a(
   ({ theme }) => `
-    color: ${theme.uiColors.linkColor};
+    color: red;
     text-decoration: none;
     transition: color ${theme.constants.animationDurationLong}ms ${theme.constants.animationTiming};
 
@@ -15,3 +15,8 @@ export const A = styled.a(
     }
   `,
 );
+
+export const Hi = styled(motion.div)`
+  ${props => props.theme.breakpoints.mobile} {
+  }
+`;

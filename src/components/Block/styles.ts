@@ -41,8 +41,8 @@ export const BlockWrapper = styled(motion.div)<StyleProps>`
 
   ${props => props.theme.breakpoints.TABLET} {
     padding: 120px 7vw;
-    align-items: ${props => (!props.isOdd ? 'flex-end' : 'flex-start')};
-    text-align: ${props => (!props.isOdd ? 'right' : 'left')};
+    align-items: ${props => (props.isOdd ? 'flex-end' : 'flex-start')};
+    text-align: ${props => (props.isOdd ? 'right' : 'left')};
   }
 
   button {

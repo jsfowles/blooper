@@ -7,9 +7,9 @@ import { TypeScale } from '@identity/type';
 const NAV_ITEMS = [
   { id: 1, title: 'resources', route: '/resources' },
   { id: 2, title: 'modifiers', route: '/modifiers' },
-  { id: 2, title: 'interface', route: '/interface' },
-  { id: 2, title: 'midi', route: '/midi' },
-  { id: 2, title: 'FAQ', route: '/faq' },
+  { id: 3, title: 'interface', route: '/interface' },
+  { id: 4, title: 'midi', route: '/midi' },
+  { id: 5, title: 'FAQ', route: '/faq' },
 ];
 
 const item = {
@@ -20,7 +20,7 @@ const item = {
 const NavItems = ({ setOpenMenu, isMobile }) => (
   <NavItemsWrapper isMobile={isMobile}>
     {NAV_ITEMS.map(({ id, title, route }) => (
-      <MenuItem variants={item}>
+      <MenuItem key={id} variants={item}>
         <Link href={route} passHref key={id}>
           <a>
             <TypeScale.P

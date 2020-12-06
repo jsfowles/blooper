@@ -10,7 +10,6 @@ const useMotionTrigger = (
 ): [InViewHookResponse[0], boolean] => {
   const [ref, inView] = useInView(props);
   const [isMounted, setIsMounted] = useState(false);
-
   useEffect(() => {
     setIsMounted(true);
   }, [setIsMounted]);

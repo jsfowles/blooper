@@ -71,6 +71,7 @@ export const GlobalStyles = createGlobalStyle`
     p {
     line-height: 1.25;
     }
+    
   body {
     font-family: 'Sanchez', san-serif;
     font-weight: 400;
@@ -78,6 +79,7 @@ export const GlobalStyles = createGlobalStyle`
     position: relative;
     display: flex;
     flex-direction: column;
+    text-transform: lowercase;
   }
 
   ol, ul {

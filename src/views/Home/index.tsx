@@ -5,22 +5,44 @@ import { motion } from 'framer-motion';
 import { DATA_BLOCKS } from '@views/Home/data';
 import Block from '@components/Block';
 import useOffset from '@hooks/useOffset';
+import { useQuery } from '@apollo/client';
+import { PageQuery } from '@graphql/PageQuery';
+
+const BG = [
+  'var(--primary-1)',
+  'var(--primary)',
+  'var(--primary-2)',
+  'var(--primary-3)',
+  'var(--primary-1)',
+];
 
 const Home = () => {
   const offset = useOffset();
+  const { data } = useQuery(PageQuery, {
+    variables: { id: '3ks1bL5TxZM1BAKjkCjAQi' },
+  });
+
+  if (!data) {
+    return null;
+  }
+
+  const homeBlocks = data.page.pageContentCollection.items.map(
+    (item, index) => ({
+      ...item,
+      index,
+      background: BG[index % BG.length],
+    }),
+  );
+  console.log(data.page.pageContentCollection, 'this');
+
   return (
     <div>
       <Scribbles>
         <Content>
-          <Image src="/images/blooper-front.png" />
-          <motion.h1>blooper</motion.h1>
+          <Image src={data.page.heroSection.image.url} />
+          <motion.h1>{data.page.heroSection.heading}</motion.h1>
           <div style={{ position: 'relative' }}>
-            <motion.p>
-              this is a website to help you enjoy a rich, regarding time with
-              your blooper. it does a lot and it can get pretty weird. so, get
-              familiar with its many tricks, or use the interface to update,
-              download , and customize.
-            </motion.p>
+            <motion.p>{data.page.heroSection.description}</motion.p>
             <Image
               src="/images/s1.png"
               className="s1"
@@ -70,7 +92,7 @@ const Home = () => {
         />
       </Scribbles>
 
-      {DATA_BLOCKS.map(block => (
+      {homeBlocks.map(block => (
         <Block {...block} />
       ))}
     </div>
