@@ -6,10 +6,12 @@ import styled from 'styled-components';
 import { childEl } from '@identity/motion';
 
 export const Wrapper = styled(motion.div)`
+  box-shadow: var(--box-shadow);
   position: relative;
   overflow: hidden;
   height: 0;
   padding-top: 56.25%;
+  border-radius: 25px;
 `;
 
 export const Ratio = styled(motion.div)`

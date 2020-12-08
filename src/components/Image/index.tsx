@@ -1,7 +1,9 @@
 import React from 'react';
 import useMotionTrigger from '@hooks/useMotionTrigger';
 import { observerThreshold } from '@identity/motion';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/router';
 
 interface Props {
   src?: string;
@@ -9,21 +11,57 @@ interface Props {
   [key: string]: any;
 }
 
-const Image = ({ src, alt, ...props }: Props) => {
+const Img = ({ url, height, width, alt, hasShadow, ...props }: Props) => {
   const [ref, animate] = useMotionTrigger({
     threshold: observerThreshold.XS,
     triggerOnce: true,
   });
+  const { pathname } = useRouter();
+  const isModifiers = pathname === '/modifiers';
+  console.log(isModifiers);
+  if (!url) {
+    return null;
+  }
 
   return (
     <motion.figure
+      style={{
+        position: 'relative',
+        display: 'table',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: width,
+        maxWidth: isModifiers ? 500 : 300,
+        height: isModifiers ? 700 : 'initial',
+        maxHeight: height,
+        borderRadius: hasShadow && 25,
+        boxShadow: hasShadow && 'rgba(0, 0, 0, 0.3) 0px 0px 10px',
+      }}
       ref={ref}
       initial={{ opacity: 0 }}
       animate={animate ? { opacity: 1 } : { opacity: 0 }}
     >
-      <motion.img {...props} src={src} alt={alt} />
+      {isModifiers ? (
+        <Image
+          layout="fill"
+          objectFit="contain"
+          {...props}
+          src={url}
+          alt={alt}
+        />
+      ) : (
+        <Image
+          className="next-image"
+          layout="responsive"
+          width={width}
+          height={height}
+          {...props}
+          src={url}
+          alt={alt}
+        />
+      )}
     </motion.figure>
   );
 };
 
-export default Image;
+export default Img;

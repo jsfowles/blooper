@@ -5,7 +5,7 @@ import { NavItems, MobileMenu } from '@patterns/Navigation';
 import { useMediaQuery } from 'react-responsive';
 
 import { Menu } from './styles/HeaderStyles';
-import Image from '@components/Image';
+import { motion } from 'framer-motion';
 
 const Header = () => {
   const isMobile = useMediaQuery({
@@ -28,7 +28,7 @@ const Header = () => {
   return (
     <Menu>
       <Link passHref href="/">
-        <Image
+        <motion.img
           whileHover={{ scale: 1.1 }}
           src="/images/s1.png"
           transition={{ type: 'spring', stiffness: 60 }}

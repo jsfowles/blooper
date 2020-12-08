@@ -9,7 +9,7 @@ export const GlobalStyles = createGlobalStyle`
     ${colors}
     ${constants}
   }
-
+  
   #__next {
     display: flex;
     min-height: 100vh;
@@ -100,20 +100,32 @@ export const GlobalStyles = createGlobalStyle`
     border-collapse: collapse;
     border-spacing: 0;
   }
-
-  html, body, #__next {
-    height: 100%;
-  }
+  
 
   a {
    color: inherit;
     text-decoration: none;
     cursor: pointer;
   }
-  
-  
-  .burger .burger-lines,
-.burger .burger-lines:after,
-.burger .burger-lines:before { background-color: #a8d1e4; }
 
+object, embed{
+      margin: 0;
+      padding: 0;
+      border: 0;
+      outline: 0;
+      font-size: 100%;
+      vertical-align: baseline;
+      background: transparent;
+  }
+
+  .burger .burger-lines,
+  .burger .burger-lines:after,
+  .burger .burger-lines:before {
+      background-color: #a8d1e4;
+  }
+
+  .next-image {
+      border-radius: 25px;
+  }
+  
 `;

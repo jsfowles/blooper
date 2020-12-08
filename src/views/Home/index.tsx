@@ -34,17 +34,16 @@ const Home = () => {
       background: BG[index % BG.length],
     }),
   );
-  console.log(data.page.pageContentCollection, 'this');
 
   return (
     <div>
       <Scribbles>
         <Content>
-          <Image src={data.page.heroSection.image.url} />
+          <Image {...data.page.heroSection.image} />
           <motion.h1>{data.page.heroSection.heading}</motion.h1>
           <div style={{ position: 'relative' }}>
             <motion.p>{data.page.heroSection.description}</motion.p>
-            <Image
+            <motion.img
               src="/images/s1.png"
               className="s1"
               transition={{ type: 'spring', stiffness: 60 }}
@@ -53,7 +52,7 @@ const Home = () => {
                 rotate: offset * 0.1,
               }}
             />
-            <Image
+            <motion.img
               src="/images/s3.png"
               className="s3"
               transition={{ type: 'spring', stiffness: 60 }}
@@ -64,7 +63,7 @@ const Home = () => {
             />
           </div>
         </Content>
-        <Image
+        <motion.img
           src="/images/s7.png"
           className="s7"
           transition={{ type: 'spring', stiffness: 60 }}
@@ -73,7 +72,7 @@ const Home = () => {
             rotate: offset * 0.08,
           }}
         />
-        <Image
+        <motion.img
           src="/images/s10.png"
           className="s10"
           transition={{ type: 'spring', stiffness: 60 }}
@@ -82,7 +81,7 @@ const Home = () => {
             rotate: -offset * 0.05,
           }}
         />
-        <Image
+        <motion.img
           src="/images/s5.png"
           className="s5"
           transition={{ type: 'spring', stiffness: 60 }}

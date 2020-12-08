@@ -7,6 +7,8 @@ export const textBlockFrag = {
       description
       image {
         url
+        width
+        height
       }
       sys {
         id

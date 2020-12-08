@@ -27,7 +27,6 @@ var _wave_upload_count = 0, _wave_upload_data = [], _wave_upload_size = 0;
 
 function _on_midi_success( midiAccess )
 {
-    console.log(midiAccess);
     midiAccess.onstatechange = _on_midi_connect;
     var event = {
         currentTarget: midiAccess

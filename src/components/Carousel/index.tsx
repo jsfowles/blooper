@@ -1,51 +1,24 @@
 // @ts-nocheck
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Header, Bloop, StoriesWrapper, Figure, Box } from './styles';
+import { Bloop, StoriesWrapper, Box } from './styles';
 import useArrowKeyFocus from './../../hooks/useArrowKeyFocus';
 import Item from './Items';
-import BloopTroop from '../BloopTroop';
+
 import { AnimatePresence, useAnimation } from 'framer-motion';
-import { cardMotion, yoMotion } from '@components/TroopCarousel/motion';
-import Video from '@components/Video';
-import Image from '@components/Image';
-import styled from 'styled-components';
-import Popup from 'reactjs-popup';
-import Button from '@components/Button';
+import { cardMotion, yoMotion } from '@components/Carousel/motion';
+import VideoPlayer from './Video';
 
-// const DATA = [
-//   { id: 0, title: 'Smooth Speed', troopCard: <BloopTroop.SmoothBloop /> },
-//   { id: 1, title: 'Dropper', troopCard: <BloopTroop.DropperBloop /> },
-//   { id: 2, title: 'Stepped Speed', troopCard: <BloopTroop.SteppedBloop /> },
-//   { id: 3, title: 'Scrambler', troopCard: <BloopTroop.ScramblerBloop /> },
-//   { id: 4, title: 'Trimmer', troopCard: <BloopTroop.TrimmerBloop /> },
-//   { id: 5, title: 'Filter', troopCard: <BloopTroop.FilterBloop /> },
-// ];
-const StyledPopup = styled(Popup)`
-  &-overlay {
-    background: black;
-    opacity: 1;
-  }
-  &-content {
-    color: pink;
-    height: 80vh;
-    span {
-      :hover {
-        cursor: pointer;
-      }
-    }
-  }
-`;
-const Carousel = ({ cards }) => {
-  console.log(cards);
+import Media from './Media';
 
+const Carousel = ({ cards, noShadow }) => {
   const [shiftIndex, setShiftIndex] = React.useState(0);
   const [focus, setFocus] = useArrowKeyFocus(cards.length);
   return (
     <>
       <StoriesWrapper>
-        <Box>
-          {cards.map(({ sys, heading }) => (
+        <Box boxWidth="40%">
+          {cards.map(({ sys, heading }, index) => (
             <>
               <Bloop key={sys.id}>
                 <Item
@@ -53,8 +26,8 @@ const Carousel = ({ cards }) => {
                   shiftIndex={shiftIndex}
                   setShiftIndex={setShiftIndex}
                   setFocus={setFocus}
-                  id={sys.id}
-                  focus={focus === sys.id}
+                  id={index}
+                  focus={focus === index}
                   title={heading}
                 />
               </Bloop>
@@ -68,41 +41,36 @@ const Carousel = ({ cards }) => {
             animate="visible"
             exit="hidden"
             variant={cardMotion}
+            boxWidth="60%"
           >
-            {cards.map(({ sys, textSummary, assetLink, mediaAsset }) => (
+            {cards.map(({ sys, textSummary, assetLink, mediaAsset }, index) => (
               <>
-                {shiftIndex === sys.id && (
-                  <motion.div variants={yoMotion}>
-                    {shiftIndex === sys.id && (
-                      <div>
-                        <h4
-                          style={{
-                            fontSize: 32,
-                            width: '35ch',
-                            textAlign: 'center',
-                          }}
-                        >
-                          {textSummary}
-                        </h4>
-                        {assetLink && <Video url={assetLink} />}
-                        {mediaAsset && (
-                          <StyledPopup
-                            trigger={
-                              <span style={{ paddingLeft: 10 }}>
-                                <Button>view</Button>
-                              </span>
-                            }
-                            modal
-                          >
-                            <embed
-                              src={mediaAsset.url}
-                              width={800}
-                              height="100%"
-                            />
-                          </StyledPopup>
+                {shiftIndex === index && (
+                  <motion.div
+                    variants={yoMotion}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      display: 'flex',
+                      justifyContent: 'center',
+                      flexDirection: 'column',
+                    }}
+                  >
+                    {shiftIndex === index && (
+                      <>
+                        <Media
+                          noShadow={noShadow}
+                          mediaAsset={mediaAsset}
+                          assetLink={assetLink}
+                          textSummary={textSummary}
+                        />
+                        {!mediaAsset && (
+                          <VideoPlayer
+                            assetLink={assetLink}
+                            textSummary={textSummary}
+                          />
                         )}
-                        <Button>download</Button>
-                      </div>
+                      </>
                     )}
                   </motion.div>
                 )}
