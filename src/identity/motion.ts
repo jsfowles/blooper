@@ -95,7 +95,7 @@ export const mobileNavEl = {
     transition: {
       when: 'afterChildren',
       duration: motionTiming.animationDurationL,
-      ease: motionTiming.animationTiming,
+      ease: 'easeInEaseOut',
       damping: 50,
       stiffness: 250,
       staggerChildren: motionTiming.childrenDurationL,

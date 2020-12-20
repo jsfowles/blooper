@@ -6,10 +6,6 @@ import { viewCalc } from '@lib/helperMethods';
 export const StoriesWrapper = styled(motion.section)`
   display: flex;
   justify-content: space-between;
-  width: ${viewCalc(1520)};
-  margin: 60px auto;
-  max-width: 1024px;
-  min-height: 550px;
 
   ul {
     width: 100%;
@@ -21,6 +17,8 @@ export const StoriesWrapper = styled(motion.section)`
 `;
 
 export const Bloop = styled(motion.li)`
+  background-color: ${props => props.bgColor};
+  padding: 4vw 7vw;
   list-style: none;
 `;
 
@@ -28,10 +26,7 @@ export const LI = styled(motion.p)`
   outline: none;
   width: 100%;
   text-align: left;
-  font-size: ${props =>
-    props.isActive
-      ? 'calc(55px + 13 * (100vw - 1000px) / 1200)'
-      : 'calc(35px + 13 * (100vw - 100px) / 1200)'};
+  font-size: 28px;
   font-weight: bold;
   transition: all 500ms ease;
   padding: 8px 0;

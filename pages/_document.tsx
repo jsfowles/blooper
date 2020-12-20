@@ -6,7 +6,6 @@ import Document, {
   NextScript,
 } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
-
 import { GlobalStyles } from '../src/identity/globalStyles';
 
 export default class MyDocument extends Document {

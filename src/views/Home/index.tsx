@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React from 'react';
 import { Scribbles, Content } from './styles';
-import Image from '@components/Image';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 import Block from '@components/Block';
@@ -39,7 +39,13 @@ const Home = () => {
     <div>
       <Scribbles>
         <Content>
-          <Image {...data.page.heroSection.image} />
+          <Image
+            layout="responsive"
+            width={data.page.heroSection.image.width}
+            height={data.page.heroSection.image.height}
+            src={data.page.heroSection.image.url}
+            alt="blooper"
+          />
           <motion.h1>{data.page.heroSection.heading}</motion.h1>
           <div style={{ position: 'relative' }}>
             <motion.p>{data.page.heroSection.description}</motion.p>

@@ -5,11 +5,10 @@ import Head from 'next/head';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ThemeProvider } from 'styled-components';
 import '@animated-burgers/burger-squeeze/dist/styles.css';
-
+import 'swiper/swiper-bundle.css';
 import { createApolloClient } from '@lib/apollo';
 import Layout from '@components/Layout';
 import * as theme from '@identity/index';
-
 import { mainMotion } from '@components/Layout/motion';
 import { ApolloProvider } from '@apollo/client';
 

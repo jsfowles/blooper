@@ -4,7 +4,7 @@ import { useQuery } from '@apollo/client';
 
 import { PageQuery } from '@graphql/PageQuery';
 import TextBlock from '@components/TextBlock';
-import Carousel from '@components/Carousel';
+import MobileCarousel from '@components/MobileCarousel';
 
 const BG = [
   'var(--primary-1)',
@@ -22,18 +22,34 @@ const Resources = () => {
   if (!data) {
     return null;
   }
-  const modifiersBlocks = data.page.pageContentCollection.items.map(
-    (item: any, index: number) => ({
+  const modifiersBlocks1 = data.page.pageContentCollection.items
+    .slice(0, 4)
+    .map((item: any, index: number) => ({
       ...item,
       index,
       background: BG[index % BG.length],
-    }),
-  );
+    }));
+
+  const modifiersBlocks2 = data.page.pageContentCollection.items
+    .slice(4, 8)
+    .map((item: any, index: number) => ({
+      ...item,
+      index,
+      background: BG[index % BG.length],
+    }));
+
+  const modifiersBlocks3 = data.page.pageContentCollection.items
+    .slice(8, 12)
+    .map((item: any, index: number) => ({
+      ...item,
+      index,
+      background: BG[index % BG.length],
+    }));
 
   return (
     <>
       <TextBlock {...data.page.heroSection} />
-      <Carousel cards={modifiersBlocks} noShadow />
+      <MobileCarousel cards={modifiersBlocks1} noShadow />
     </>
   );
 };
