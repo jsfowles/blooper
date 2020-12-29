@@ -11,13 +11,13 @@ import VideoPlayer from './Video';
 
 import Media from './Media';
 
-const Carousel = ({ cards, noShadow }) => {
+const Carousel = ({ cards, noShadow, reverse }) => {
   const [shiftIndex, setShiftIndex] = React.useState(0);
   const [focus, setFocus] = useArrowKeyFocus(cards.length);
   return (
     <>
-      <StoriesWrapper>
-        <Box boxWidth="40%">
+      <StoriesWrapper reverse={reverse}>
+        <Box boxWidth="40%" reverse={reverse}>
           {cards.map(({ sys, heading }, index) => (
             <>
               <Bloop key={sys.id}>
@@ -41,7 +41,7 @@ const Carousel = ({ cards, noShadow }) => {
             animate="visible"
             exit="hidden"
             variant={cardMotion}
-            boxWidth="60%"
+            boxWidth="initial"
           >
             {cards.map(({ sys, textSummary, assetLink, mediaAsset }, index) => (
               <>

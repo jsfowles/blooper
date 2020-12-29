@@ -35,8 +35,6 @@ const Home = () => {
     }),
   );
 
-  console.log(data.page.heroSection.heading);
-
   return (
     <div>
       {FAQsBlock.map(({ heading, textSummary }) => (

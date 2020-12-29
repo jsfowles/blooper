@@ -18,7 +18,7 @@ const Img = ({ url, height, width, alt, hasShadow, ...props }: Props) => {
   });
   const { pathname } = useRouter();
   const isModifiers = pathname === '/modifiers';
-  console.log(isModifiers);
+
   if (!url) {
     return null;
   }

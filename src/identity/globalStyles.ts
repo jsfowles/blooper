@@ -1,26 +1,22 @@
 import { createGlobalStyle } from 'styled-components';
 
 import { constants } from './constants';
-import { uiColors, colors } from './colors';
+import { colors, uiColors } from './colors';
 
 export const GlobalStyles = createGlobalStyle`
   :root {
-    ${uiColors}
-    ${colors}
-    ${constants}
+    ${uiColors} ${colors} ${constants}
   }
-  
+
   #__next {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
+
   }
 
   html {
     box-sizing: border-box;
     scroll-behavior: smooth;
     touch-action: manipulation;
-        background: #ffffff;
+    background: #ffffff;
   }
 
   * {
@@ -53,25 +49,20 @@ export const GlobalStyles = createGlobalStyle`
     display: block;
   }
 
-  main {
-    flex: 1 0 auto;
-
-  }
-
   header {
-    flex-shrink:0;
+
     z-index: 1000;
   }
 
   footer {
-    flex-shrink: 0;
+
     z-index: 1000;
   }
 
-    p {
+  p {
     line-height: 1.25;
-    }
-    
+  }
+
   body {
     font-family: 'Sanchez', san-serif;
     font-weight: 400;
@@ -100,32 +91,50 @@ export const GlobalStyles = createGlobalStyle`
     border-collapse: collapse;
     border-spacing: 0;
   }
-  
+
 
   a {
-   color: inherit;
+    color: inherit;
     text-decoration: none;
     cursor: pointer;
   }
 
-object, embed{
-      margin: 0;
-      padding: 0;
-      border: 0;
-      outline: 0;
-      font-size: 100%;
-      vertical-align: baseline;
-      background: transparent;
+  object, embed {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
   }
 
   .burger .burger-lines,
   .burger .burger-lines:after,
   .burger .burger-lines:before {
-      background-color: #a8d1e4;
+    background-color: #a8d1e4;
   }
 
   .next-image {
-      border-radius: 25px;
+    border-radius: 25px;
+  }
+
+  .swiper-slide-shadow-left, .swiper-slide-shadow-right {
+    background: transparent !important;
+  }
+
+  .player-wrapper {
+    position: relative;
+    padding-top: 56.25%
+  }
+
+  .react-player {
+    position: absolute;
+    top: 0;
+    left: 0;
   }
   
+  .swiper-container {
+padding-top: 50px;
+  }
 `;

@@ -5,6 +5,8 @@ import { useQuery } from '@apollo/client';
 import { PageQuery } from '@graphql/PageQuery';
 import TextBlock from '@components/TextBlock';
 import Carousel from '@components/Carousel';
+import MobileCarousel from '@components/MobileCarousel';
+import { useMediaQuery } from 'react-responsive';
 
 const BG = [
   'var(--primary-1)',
@@ -15,6 +17,9 @@ const BG = [
 ];
 
 const Resources = () => {
+  const isMobile = useMediaQuery({
+    query: '(max-device-width: 1024px)',
+  });
   const { data } = useQuery(PageQuery, {
     variables: { id: '5yHQKfznN9ePFS00EII6Im' },
   });
@@ -34,7 +39,11 @@ const Resources = () => {
   return (
     <>
       <TextBlock {...data.page.heroSection} />
-      <Carousel cards={resourceBlocks} />
+      {isMobile ? (
+        <MobileCarousel cards={resourceBlocks} />
+      ) : (
+        <Carousel cards={resourceBlocks} />
+      )}
     </>
   );
 };

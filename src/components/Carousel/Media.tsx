@@ -5,7 +5,6 @@ import Image from '@components/Image';
 import Button from '@components/Button';
 
 const Media = ({ textSummary, mediaAsset, assetLink, noShadow }) => {
-  console.log(mediaAsset);
   if (!mediaAsset) {
     return null;
   }

@@ -11,6 +11,7 @@ const Header = () => {
   const isMobile = useMediaQuery({
     query: '(max-device-width: 768px)',
   });
+
   const [offset, setOffset] = React.useState(0);
 
   React.useEffect(() => {
