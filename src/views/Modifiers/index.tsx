@@ -1,4 +1,4 @@
-// ts-nocheck
+// @ts-nocheck
 import React from 'react';
 import { useQuery } from '@apollo/client';
 
@@ -58,9 +58,9 @@ const Resources = () => {
       <TextBlock {...data.page.heroSection} />
       {isMobile ? (
         <>
-          <MobileCarousel cards={modifiersBlocks1} noShadow />
-          <MobileCarousel cards={modifiersBlocks2} noShadow />
-          <MobileCarousel cards={modifiersBlocks3} noShadow />
+          <MobileCarousel cards={modifiersBlocks1} />
+          <MobileCarousel cards={modifiersBlocks2} />
+          <MobileCarousel cards={modifiersBlocks3} />
         </>
       ) : (
         <>

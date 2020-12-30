@@ -1,4 +1,4 @@
-// Import Swiper React components
+// @ts-nocheck
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { EffectCoverflow } from 'swiper';
 import { useMediaQuery } from 'react-responsive';
