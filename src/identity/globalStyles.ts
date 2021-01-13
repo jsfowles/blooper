@@ -92,7 +92,6 @@ export const GlobalStyles = createGlobalStyle`
     border-spacing: 0;
   }
 
-
   a {
     color: inherit;
     text-decoration: none;
@@ -133,8 +132,14 @@ export const GlobalStyles = createGlobalStyle`
     top: 0;
     left: 0;
   }
-  
+
   .swiper-container {
-padding-top: 50px;
+    padding-top: 50px;
+    margin: 0 7vw;
   }
+.swiper-slide {
+    
+max-height: 600px;
+
+}
 `;

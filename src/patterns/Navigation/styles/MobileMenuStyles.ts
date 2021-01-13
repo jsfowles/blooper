@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 export const Overlay = styled(motion.div)`
+  z-index: 100;
   background-color: #fffffff6;
   position: absolute;
   height: 100vh;
@@ -13,6 +14,6 @@ export const Overlay = styled(motion.div)`
 
 export const MobileMenuWrapper = styled(motion.div)`
   .burger {
-    z-index: 1;
+    z-index: 101;
   }
 `;

@@ -14,11 +14,15 @@ import Media from './Media';
 const Carousel = ({ cards, noShadow, reverse }) => {
   const [shiftIndex, setShiftIndex] = React.useState(0);
   const [focus, setFocus] = useArrowKeyFocus(cards.length);
+
   return (
-    <>
+    <div>
+      <h3 style={{ fontSize: 60, textAlign: 'center', paddingTop: 60 }}>
+        {cards[0].title}
+      </h3>
       <StoriesWrapper reverse={reverse}>
-        <Box boxWidth="40%" reverse={reverse}>
-          {cards.map(({ sys, heading }, index) => (
+        <Box reverse={reverse} style={{ maxWidth: 'max-content' }}>
+          {cards.map(({ sys, heading, title }, index) => (
             <>
               <Bloop key={sys.id}>
                 <Item
@@ -35,51 +39,49 @@ const Carousel = ({ cards, noShadow, reverse }) => {
           ))}
         </Box>
 
-        <AnimatePresence exitBeforeEnter>
-          <Box
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
-            variant={cardMotion}
-            boxWidth="initial"
-          >
-            {cards.map(({ sys, textSummary, assetLink, mediaAsset }, index) => (
-              <>
-                {shiftIndex === index && (
-                  <motion.div
-                    variants={yoMotion}
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      display: 'flex',
-                      justifyContent: 'center',
-                      flexDirection: 'column',
-                    }}
-                  >
-                    {shiftIndex === index && (
-                      <>
-                        <Media
-                          noShadow={noShadow}
-                          mediaAsset={mediaAsset}
+        {/*<AnimatePresence exitBeforeEnter>*/}
+        <Box
+          initial="hidden"
+          animate="visible"
+          exit="hidden"
+          variant={cardMotion}
+        >
+          {cards.map(({ sys, textSummary, assetLink, mediaAsset }, index) => (
+            <>
+              {shiftIndex === index && (
+                <motion.div
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    flexDirection: 'column',
+                  }}
+                >
+                  {shiftIndex === index && (
+                    <>
+                      <Media
+                        noShadow={noShadow}
+                        mediaAsset={mediaAsset}
+                        assetLink={assetLink}
+                        textSummary={textSummary}
+                      />
+                      {!mediaAsset && (
+                        <VideoPlayer
                           assetLink={assetLink}
                           textSummary={textSummary}
                         />
-                        {!mediaAsset && (
-                          <VideoPlayer
-                            assetLink={assetLink}
-                            textSummary={textSummary}
-                          />
-                        )}
-                      </>
-                    )}
-                  </motion.div>
-                )}
-              </>
-            ))}
-          </Box>
-        </AnimatePresence>
+                      )}
+                    </>
+                  )}
+                </motion.div>
+              )}
+            </>
+          ))}
+        </Box>
+        {/*</AnimatePresence>*/}
       </StoriesWrapper>
-    </>
+    </div>
   );
 };
 

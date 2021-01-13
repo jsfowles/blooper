@@ -10,7 +10,7 @@ export const TextBlockWrapper = styled(motion.div)`
 
   h1 {
     text-align: center;
-    font-size: 80px;
+    font-size: 60px;
 
     ${props => props.theme.breakpoints.TABLET} {
       font-size: 124px;

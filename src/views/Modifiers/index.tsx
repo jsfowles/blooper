@@ -29,47 +29,61 @@ const Resources = () => {
     return null;
   }
 
-  const modifiersBlocks1 = data.page.pageContentCollection.items
-    .slice(0, 4)
+  const timeModifiers = data.page.pageContentCollection.items
+    .slice(0, 3)
     .map((item: any, index: number) => ({
       ...item,
       index,
+      title: 'time',
       background: BG[index % BG.length],
     }));
 
-  const modifiersBlocks2 = data.page.pageContentCollection.items
-    .slice(4, 8)
+  const behaviorModifiers = data.page.pageContentCollection.items
+    .slice(3, 7)
     .map((item: any, index: number) => ({
       ...item,
       index,
+      title: 'behavior',
       background: BG[index % BG.length],
     }));
 
-  const modifiersBlocks3 = data.page.pageContentCollection.items
-    .slice(8, 12)
+  const frequencyModifiers = data.page.pageContentCollection.items
+    .slice(7, 9)
     .map((item: any, index: number) => ({
       ...item,
       index,
+      title: 'frequency',
+      background: BG[index % BG.length],
+    }));
+
+  const interactiveModifiers = data.page.pageContentCollection.items
+    .slice(9, 12)
+    .map((item: any, index: number) => ({
+      ...item,
+      index,
+      title: 'interactive',
       background: BG[index % BG.length],
     }));
 
   return (
-    <>
+    <div>
       <TextBlock {...data.page.heroSection} />
       {isMobile ? (
-        <>
-          <MobileCarousel cards={modifiersBlocks1} />
-          <MobileCarousel cards={modifiersBlocks2} />
-          <MobileCarousel cards={modifiersBlocks3} />
-        </>
+        <div>
+          <MobileCarousel cards={timeModifiers} />
+          <MobileCarousel cards={behaviorModifiers} />
+          <MobileCarousel cards={frequencyModifiers} />
+          <MobileCarousel cards={interactiveModifiers} />
+        </div>
       ) : (
-        <>
-          <Carousel cards={modifiersBlocks1} noShadow />
-          <Carousel cards={modifiersBlocks2} noShadow reverse />
-          <Carousel cards={modifiersBlocks3} noShadow />
-        </>
+        <div>
+          <Carousel cards={timeModifiers} noShadow />
+          <Carousel cards={behaviorModifiers} noShadow reverse />
+          <Carousel cards={frequencyModifiers} noShadow />
+          <Carousel cards={interactiveModifiers} noShadow reverse />
+        </div>
       )}
-    </>
+    </div>
   );
 };
 

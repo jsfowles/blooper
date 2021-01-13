@@ -5,6 +5,7 @@ import Head from 'next/head';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ThemeProvider } from 'styled-components';
 import '@animated-burgers/burger-squeeze/dist/styles.css';
+import 'pure-react-carousel/dist/react-carousel.es.css';
 import 'swiper/swiper-bundle.css';
 import { createApolloClient } from '@lib/apollo';
 import Layout from '@components/Layout';

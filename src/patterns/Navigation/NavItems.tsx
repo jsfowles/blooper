@@ -7,7 +7,11 @@ import { TypeScale } from '@identity/type';
 const NAV_ITEMS = [
   { id: 1, title: 'resources', route: '/resources' },
   { id: 2, title: 'modifiers', route: '/modifiers' },
-  { id: 3, title: 'interface', route: '/interface' },
+  {
+    id: 3,
+    title: 'interface',
+    route: 'https://chasebliss.com/wp-content/uploads/2020/09/blooper.2.0.html',
+  },
   { id: 4, title: 'midi', route: '/midi' },
   { id: 5, title: 'FAQ', route: '/faq' },
 ];
@@ -21,7 +25,7 @@ const NavItems = ({ setOpenMenu, isMobile }) => (
   <NavItemsWrapper isMobile={isMobile}>
     {NAV_ITEMS.map(({ id, title, route }) => (
       <MenuItem key={id} variants={item}>
-        <Link href={route} passHref key={id}>
+        <Link href={route} passHref scroll>
           <a>
             <TypeScale.P
               whileHover={{ scale: 1.1 }}

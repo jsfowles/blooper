@@ -7,7 +7,7 @@ export const StoriesWrapper = styled(motion.section)`
   display: flex;
   flex-direction: ${props => props.reverse && 'row-reverse'};
   justify-content: space-between;
-  width: ${viewCalc(1540)};
+  width: ${viewCalc(1024)};
   margin: 60px auto;
   max-width: 1024px;
   min-height: 550px;
@@ -50,4 +50,5 @@ export const Box = styled(motion.div)`
   justify-content: center;
   width: ${props => (props.boxWidth ? `${props.boxWidth}` : '100%')};
   align-items: ${props => props.reverse && 'flex-end'};
+  padding: 2vw;
 `;
