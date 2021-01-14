@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from 'react';
 import { motion } from 'framer-motion';
 import { TextBlockWrapper } from './styles';
@@ -13,7 +14,7 @@ const TextBlock = ({ heading, description }: Props) => {
     <TextBlockWrapper>
       <motion.h1>{heading}</motion.h1>
 
-      <ReactMarkdown plugins={[gfm]}>{description}</ReactMarkdown>
+      <ReactMarkdown plugins={[gfm]} children={description} />
     </TextBlockWrapper>
   );
 };
