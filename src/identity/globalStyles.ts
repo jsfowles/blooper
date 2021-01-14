@@ -166,4 +166,9 @@ margin-top: 20px;
     color: white;
     text-align: center;
   }
+  
+  a {
+      color: gray;
+
+  }
 `;

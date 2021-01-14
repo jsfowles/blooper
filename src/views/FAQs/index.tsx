@@ -8,6 +8,8 @@ import Block from '@components/Block';
 import useOffset from '@hooks/useOffset';
 import { useQuery } from '@apollo/client';
 import { PageQuery } from '@graphql/PageQuery';
+import ReactMarkdown from 'react-markdown';
+import gfm from 'remark-gfm';
 
 const BG = [
   'var(--primary-1)',
@@ -69,7 +71,7 @@ const Home = () => {
             {heading}
           </h4>
           <p style={{ fontSize: 18, maxWidth: '35ch', paddingTop: 24 }}>
-            {textSummary}
+            <ReactMarkdown plugins={[gfm]}>{textSummary}</ReactMarkdown>
           </p>
         </div>
       ))}
