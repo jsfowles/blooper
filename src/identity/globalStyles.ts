@@ -2,6 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 import { constants } from './constants';
 import { colors, uiColors } from './colors';
+import { breakpoints } from '@identity/breakpoints';
 
 export const GlobalStyles = createGlobalStyle`
   :root {
@@ -150,7 +151,8 @@ export const GlobalStyles = createGlobalStyle`
 
     display: flex;
     justify-content: center;
-margin-top: 20px;
+    margin-top: 20px;
+
     button {
       margin: 0 2px;
       border: 2px solid #cbdce3;
@@ -158,17 +160,20 @@ margin-top: 20px;
   }
 
   .filled-header {
-    display: flex;
     margin: 0 auto;
     width: max-content;
     padding: 18px;
     background: #cbdce3;
     color: white;
     text-align: center;
+    font-size: 40px;
+
+    ${breakpoints.TABLET_HD}{
+    font-size: 60px
+    }
   }
-  
-  a {
+    a {
       color: gray;
 
-  }
+    }
 `;

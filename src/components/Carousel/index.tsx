@@ -18,10 +18,7 @@ const Carousel = ({ cards, noShadow, reverse }) => {
   return (
     <div style={{ paddingTop: 60 }}>
       {cards[0].title && (
-        <h3
-          className="filled-header"
-          style={{ fontSize: 60, textAlign: 'center' }}
-        >
+        <h3 className="filled-header" style={{ textAlign: 'center' }}>
           {cards[0].title}
         </h3>
       )}

@@ -27,9 +27,7 @@ const MobileCarousel = ({ cards, noResize }) => {
           {cards.map(
             ({ mediaAsset, heading, textSummary, assetLink }, index) => (
               <Slide index={index}>
-                <h3 className="filled-header" style={{ fontSize: 60 }}>
-                  {heading}
-                </h3>
+                <h3 className="filled-header">{heading}</h3>
                 {mediaAsset?.url ? (
                   <Image
                     src={mediaAsset?.url}
