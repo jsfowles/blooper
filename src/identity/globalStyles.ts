@@ -133,13 +133,26 @@ export const GlobalStyles = createGlobalStyle`
     left: 0;
   }
 
-  .swiper-container {
-    padding-top: 50px;
-    margin: 0 7vw;
-  }
-.swiper-slide {
-    
-max-height: 600px;
+  .carousel__inner-slide {
+    display: flex;
+    flex-direction: column;
+    padding: 0 7vw;
+    max-height: 80vh;
 
-}
+    img {
+        padding: 20px 0;
+      object-fit: contain;
+    }
+
+  }
+    .carousel__dot-group {
+
+        display: flex;
+        justify-content: center;
+        
+        button {
+            margin: 0 2px;
+            border: 2px solid #cbdce3;
+        }
+    }
 `;

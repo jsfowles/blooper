@@ -6,10 +6,10 @@ import { viewCalc } from '@lib/helperMethods';
 export const StoriesWrapper = styled(motion.section)`
   display: flex;
   flex-direction: ${props => props.reverse && 'row-reverse'};
-  justify-content: space-between;
-  width: ${viewCalc(1024)};
+
+  //width: ${viewCalc(1024)};
   margin: 60px auto;
-  max-width: 1024px;
+  //max-width: 1024px;
   min-height: 550px;
 
   ul {
@@ -48,7 +48,6 @@ export const Box = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: ${props => (props.boxWidth ? `${props.boxWidth}` : '100%')};
-  align-items: ${props => props.reverse && 'flex-end'};
-  padding: 2vw;
+  align-items: ${props => (!props.reverse ? 'flex-end' : 'flex-start')};
+  width: 50%;
 `;
