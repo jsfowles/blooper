@@ -12,31 +12,28 @@ import {
   DotGroup,
   Image,
 } from 'pure-react-carousel';
+import React from 'react';
 
-const MobileCarousel = ({ cards }) => {
-  const isMobile = useMediaQuery({
-    query: '(max-device-width: 1024px)',
-  });
-
+const MobileCarousel = ({ cards, noResize }) => {
   return (
     <div style={{ padding: '7vw 0' }}>
       <CarouselProvider
-        naturalSlideWidth={710}
-        naturalSlideHeight={919}
-        isIntrinsicHeight
+        naturalSlideWidth={1700}
+        naturalSlideHeight={2200}
+        isIntrinsicHeight={!noResize}
         totalSlides={cards.length}
       >
         <Slider>
           {cards.map(
             ({ mediaAsset, heading, textSummary, assetLink }, index) => (
               <Slide index={index}>
-                <h3 style={{ fontSize: 32, textAlign: 'center' }}>{heading}</h3>
+                <h3 className="filled-header" style={{ fontSize: 60 }}>
+                  {heading}
+                </h3>
                 {mediaAsset?.url ? (
                   <Image
-                    style={{
-                      height: 'calc(100% - 41px)',
-                    }}
                     src={mediaAsset?.url}
+                    style={{ height: 'calc(100% - 41px)' }}
                   />
                 ) : (
                   <div className="player-wrapper">

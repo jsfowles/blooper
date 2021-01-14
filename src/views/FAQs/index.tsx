@@ -37,10 +37,40 @@ const Home = () => {
 
   return (
     <div>
-      {FAQsBlock.map(({ heading, textSummary }) => (
-        <div style={{ maxWidth: 1024, margin: '0 auto', padding: '20px 0' }}>
-          <h4 style={{ fontSize: 32, maxWidth: '25ch' }}>{heading}</h4>
-          <p style={{ fontSize: 18, maxWidth: '35ch' }}>{textSummary}</p>
+      <h1
+        className="filled-header"
+        style={{
+          fontSize: 48,
+          margin: '32px auto',
+        }}
+      >
+        FAQ's
+      </h1>
+      {FAQsBlock.map(({ heading, textSummary, background }) => (
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            padding: '60px 7vw',
+          }}
+        >
+          <h4
+            style={{
+              fontSize: 28,
+              maxWidth: '25ch',
+              background: background,
+              padding: 26,
+              color: 'gray',
+              boxShadow: '0px 5px 15px 0px rgba(0,0,0,0.1)',
+              borderRadius: 25,
+            }}
+          >
+            {heading}
+          </h4>
+          <p style={{ fontSize: 18, maxWidth: '35ch', paddingTop: 24 }}>
+            {textSummary}
+          </p>
         </div>
       ))}
     </div>

@@ -137,22 +137,33 @@ export const GlobalStyles = createGlobalStyle`
     display: flex;
     flex-direction: column;
     padding: 0 7vw;
-    max-height: 80vh;
+
 
     img {
-        padding: 20px 0;
+
       object-fit: contain;
     }
 
   }
-    .carousel__dot-group {
 
-        display: flex;
-        justify-content: center;
-        
-        button {
-            margin: 0 2px;
-            border: 2px solid #cbdce3;
-        }
+  .carousel__dot-group {
+
+    display: flex;
+    justify-content: center;
+margin-top: 20px;
+    button {
+      margin: 0 2px;
+      border: 2px solid #cbdce3;
     }
+  }
+
+  .filled-header {
+    display: flex;
+    margin: 0 auto;
+    width: max-content;
+    padding: 18px;
+    background: #cbdce3;
+    color: white;
+    text-align: center;
+  }
 `;

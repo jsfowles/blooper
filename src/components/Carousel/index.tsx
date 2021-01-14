@@ -16,10 +16,15 @@ const Carousel = ({ cards, noShadow, reverse }) => {
   const [focus, setFocus] = useArrowKeyFocus(cards.length);
 
   return (
-    <div>
-      <h3 style={{ fontSize: 60, textAlign: 'center', paddingTop: 60 }}>
-        {cards[0].title}
-      </h3>
+    <div style={{ paddingTop: 60 }}>
+      {cards[0].title && (
+        <h3
+          className="filled-header"
+          style={{ fontSize: 60, textAlign: 'center' }}
+        >
+          {cards[0].title}
+        </h3>
+      )}
       <StoriesWrapper reverse={reverse}>
         <Box reverse={reverse} style={{ padding: '0 7vw' }}>
           {cards.map(({ sys, heading, title }, index) => (

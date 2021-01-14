@@ -18,11 +18,17 @@ const VideoPlayer = ({ assetLink, textSummary }) => {
           display: 'flex',
           justifyContent: 'space-evenly',
           alignItems: 'center',
+          width: '100%',
         }}
       >
-        <p style={{ fontSize: 18, paddingTop: 50 }}>{textSummary}</p>
+        <p style={{ fontSize: 18, paddingTop: 50, paddingRight: 25 }}>
+          {textSummary}
+        </p>
         {assetLink && (
-          <a href="https://www.youtube.com/playlist?list=PLX7ehdcDltWiMQ-ffmCB4_OBLaU8IXPxw">
+          <a
+            href="https://www.youtube.com/playlist?list=PLX7ehdcDltWiMQ-ffmCB4_OBLaU8IXPxw"
+            target="_blank"
+          >
             <Button>view more</Button>
           </a>
         )}

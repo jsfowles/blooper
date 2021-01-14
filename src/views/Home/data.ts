@@ -19,7 +19,7 @@ export const DATA_BLOCKS = [
     heading: 'interface',
     paragraph:
       'connect directly to your blooper to download saved loops, update firmware, or customize your modifiers',
-    route: '/resources',
+    route: 'https://chasebliss.com/wp-content/uploads/2020/09/blooper.2.0.html',
     bg: 'var(--primary-2)',
   },
   {

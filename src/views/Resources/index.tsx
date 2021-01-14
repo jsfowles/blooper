@@ -40,7 +40,7 @@ const Resources = () => {
     <>
       <TextBlock {...data.page.heroSection} />
       {isMobile ? (
-        <MobileCarousel cards={resourceBlocks} />
+        <MobileCarousel cards={resourceBlocks} noResize />
       ) : (
         <Carousel cards={resourceBlocks} />
       )}
