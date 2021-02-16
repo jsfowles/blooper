@@ -22,7 +22,6 @@ const MyApp = ({ Component, pageProps, router, apollo }: AppProps & Props) => {
     <ThemeProvider theme={theme}>
       <Head>
         <title>The Blooper - CBA</title>
-        <link rel="shortcut icon" type="image/x-icon" />
       </Head>
 
       <ApolloProvider client={apollo}>

@@ -29,10 +29,12 @@ const MobileCarousel = ({ cards, noResize }) => {
               <Slide index={index}>
                 <h3 className="filled-header">{heading}</h3>
                 {mediaAsset?.url ? (
-                  <Image
-                    src={mediaAsset?.url}
-                    style={{ height: 'calc(100% - 41px)' }}
-                  />
+                  <a href={assetLink} target="_blank">
+                    <Image
+                      src={mediaAsset?.url}
+                      style={{ height: 'calc(100% - 41px)' }}
+                    />
+                  </a>
                 ) : (
                   <div className="player-wrapper">
                     <ReactPlayer
