@@ -1,10 +1,6 @@
 // @ts-nocheck
 import React from 'react';
-import { Scribbles, Content } from './styles';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
 
-import Block from '@components/Block';
 import useOffset from '@hooks/useOffset';
 import { useQuery } from '@apollo/client';
 import { PageQuery } from '@graphql/PageQuery';
@@ -20,7 +16,6 @@ const BG = [
 ];
 
 const Home = () => {
-  const offset = useOffset();
   const { data } = useQuery(PageQuery, {
     variables: { id: '3hAiIlzVLEB6JMguCHydMu' },
   });
