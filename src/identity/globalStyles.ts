@@ -173,7 +173,6 @@ export const GlobalStyles = createGlobalStyle`
     }
   }
     a {
-      color: #669999;
-
+      color: #428fa4;
     }
 `;
