@@ -29,7 +29,7 @@ const MyApp = ({ Component, pageProps, router, apollo }: AppProps & Props) => {
         <Layout>
           <AnimatePresence exitBeforeEnter>
             <motion.main {...mainMotion} key={router.route}>
-              <Component {...pageProps} key={router.route} />
+              <Component {...pageProps} />
             </motion.main>
           </AnimatePresence>
         </Layout>

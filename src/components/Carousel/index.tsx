@@ -14,14 +14,9 @@ import Media from './Media';
 const Carousel = ({ cards, noShadow, reverse }) => {
   const [shiftIndex, setShiftIndex] = React.useState(0);
   const [focus, setFocus] = useArrowKeyFocus(cards.length);
-
+  console.log(cards);
   return (
     <div style={{ paddingTop: 60 }}>
-      {cards[0].title && (
-        <h3 className="filled-header" style={{ textAlign: 'center' }}>
-          {cards[0].title}
-        </h3>
-      )}
       <StoriesWrapper reverse={reverse}>
         <Box reverse={reverse} style={{ padding: '0 7vw' }}>
           {cards.map(({ sys, heading, title }, index) => (

@@ -5,16 +5,15 @@ import { MenuItem, NavItemsWrapper } from './styles/NavItemsStyles';
 import { TypeScale } from '@identity/type';
 
 const NAV_ITEMS = [
-  { id: 1, title: 'home', route: '/' },
-  { id: 2, title: 'resources', route: '/resources' },
-  { id: 3, title: 'modifiers', route: '/modifiers' },
+  { id: 1, title: 'resources', route: '/resources' },
+  { id: 2, title: 'modifiers', route: '/modifiers' },
   {
-    id: 4,
+    id: 3,
     title: 'interface',
     route: 'https://chasebliss.com/wp-content/uploads/2020/09/blooper.2.0.html',
   },
-  { id: 5, title: 'midi', route: '/midi' },
-  { id: 6, title: 'FAQ', route: '/faq' },
+  { id: 4, title: 'midi', route: '/midi' },
+  { id: 5, title: 'FAQ', route: '/faq' },
 ];
 
 const item = {

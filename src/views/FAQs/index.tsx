@@ -60,17 +60,19 @@ const Home = () => {
           <h4
             style={{
               fontSize: 28,
-              maxWidth: '25ch',
-              background: background,
-              padding: 26,
-              color: 'gray',
-              boxShadow: '0px 5px 15px 0px rgba(0,0,0,0.1)',
-              borderRadius: 25,
+              maxWidth: '23ch',
             }}
           >
             {heading}
           </h4>
-          <p style={{ fontSize: 18, maxWidth: '35ch', paddingTop: 24 }}>
+          <p
+            style={{
+              fontSize: 18,
+              maxWidth: '36ch',
+              width: '100%',
+              paddingTop: 24,
+            }}
+          >
             <ReactMarkdown plugins={[gfm]}>{textSummary}</ReactMarkdown>
           </p>
         </div>

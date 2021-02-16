@@ -1,1 +1,1 @@
-export { default } from '@views/Resources';
+export { default } from '@views/MIDI';

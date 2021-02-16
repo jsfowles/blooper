@@ -14,12 +14,11 @@ const Footer = () => {
         alignItems: 'center',
       }}
     >
-      <p style={{ fontSize: 24, textAlign: 'center' }}>contact</p>
       <motion.img
-        style={{ width: 100, position: 'absolute' }}
-        src="/images/s7.png"
-        className="s7"
+        style={{ width: 400, position: 'absolute', zIndex: 1 }}
+        src="/images/logo.png"
       />
+
       <motion.img
         style={{ width: 100, position: 'absolute', left: '25%', top: 30 }}
         src="/images/s10.png"
