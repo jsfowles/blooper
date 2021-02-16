@@ -21,7 +21,7 @@ const MyApp = ({ Component, pageProps, router, apollo }: AppProps & Props) => {
   return (
     <ThemeProvider theme={theme}>
       <Head>
-        <title>The Blooper</title>
+        <title>The Blooper - CBA</title>
         <link rel="shortcut icon" type="image/x-icon" />
       </Head>
 

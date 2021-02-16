@@ -49,7 +49,11 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Sanchez&display=swap"
             rel="stylesheet"
           />
-          <link rel="shortcut icon" href="../images/favicon.ico" />
+          <link
+            rel="shortcut icon"
+            href="/images/s10.png"
+            type="image/x-icon"
+          />
 
           <GlobalStyles />
         </Head>
