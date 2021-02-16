@@ -155,7 +155,7 @@ export const GlobalStyles = createGlobalStyle`
 
     button {
       margin: 0 2px;
-      border: 2px solid #cbdce3;
+      border: 2px solid #428fa4;
     }
   }
 
@@ -163,7 +163,7 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0 auto;
     width: max-content;
     padding: 18px;
-    background: #cbdce3;
+    background: #428fa4;
     color: white;
     text-align: center;
     font-size: 40px;
@@ -173,6 +173,12 @@ export const GlobalStyles = createGlobalStyle`
     }
   }
     a {
-      color: #428fa4;
+      color: #5B6770;
+    }
+    
+    p {
+        a {
+            color: #428fa4
+        }
     }
 `;
