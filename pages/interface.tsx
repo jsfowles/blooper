@@ -10,7 +10,7 @@ const Interface = () => {
           href="https://fonts.googleapis.com/css2?family=Sanchez&display=swap"
           rel="stylesheet"
         />
-        <meta name="description" content />
+        <meta name="description" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <div
           id="main"
