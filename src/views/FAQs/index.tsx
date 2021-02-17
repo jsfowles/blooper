@@ -1,11 +1,12 @@
 // @ts-nocheck
 import React from 'react';
 
-import useOffset from '@hooks/useOffset';
 import { useQuery } from '@apollo/client';
 import { PageQuery } from '@graphql/PageQuery';
 import ReactMarkdown from 'react-markdown';
 import gfm from 'remark-gfm';
+import TextBlock from '@components/TextBlock';
+import styled from 'styled-components';
 
 const BG = [
   'var(--primary-1)',
@@ -14,6 +15,16 @@ const BG = [
   'var(--primary-3)',
   'var(--primary-1)',
 ];
+
+const MD = styled.div`
+  p {
+    padding-bottom: 1em;
+    line-height: 140%;
+    strong {
+      font-weight: bold;
+    }
+  }
+`;
 
 const Home = () => {
   const { data } = useQuery(PageQuery, {
@@ -34,42 +45,36 @@ const Home = () => {
 
   return (
     <div>
-      <h1
-        className="filled-header"
-        style={{
-          fontSize: 48,
-          margin: '32px auto',
-        }}
-      >
-        FAQ's
-      </h1>
+      <TextBlock {...data.page.heroSection} />
       {FAQsBlock.map(({ heading, textSummary, background }) => (
         <div
           style={{
             display: 'flex',
             flexDirection: 'column',
-            alignItems: 'center',
-            padding: '60px 7vw',
+
+            paddingBottom: '40px',
+            maxWidth: 1024,
+            margin: '0 auto',
           }}
         >
           <h4
             style={{
               fontSize: 28,
-              maxWidth: '23ch',
+              maxWidth: '28ch',
             }}
           >
             {heading}
           </h4>
-          <p
+          <MD
             style={{
               fontSize: 18,
-              maxWidth: '36ch',
+              maxWidth: '42ch',
               width: '100%',
               paddingTop: 24,
             }}
           >
             <ReactMarkdown plugins={[gfm]}>{textSummary}</ReactMarkdown>
-          </p>
+          </MD>
         </div>
       ))}
     </div>

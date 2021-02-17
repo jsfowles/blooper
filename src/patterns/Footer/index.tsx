@@ -15,7 +15,7 @@ const Footer = () => {
       }}
     >
       <motion.img
-        style={{ width: 400, position: 'absolute', zIndex: 1 }}
+        style={{ width: 250, position: 'absolute', zIndex: 1 }}
         src="/images/logo.png"
       />
 

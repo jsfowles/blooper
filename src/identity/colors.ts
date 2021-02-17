@@ -7,7 +7,7 @@ export const colors = css`
   --primary-3: #d4e0e0;
 
   --link: #669999;
-  --black: #1d252d;
+  --black: #5b6770;
   --white: #ffffff;
 `;
 

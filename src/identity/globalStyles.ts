@@ -72,6 +72,7 @@ export const GlobalStyles = createGlobalStyle`
     display: flex;
     flex-direction: column;
     text-transform: lowercase;
+      color: #5b6770;
   }
 
   ol, ul {

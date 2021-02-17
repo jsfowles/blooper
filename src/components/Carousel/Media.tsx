@@ -17,7 +17,9 @@ const Media = ({ textSummary, mediaAsset, assetLink, noShadow }) => {
       }}
     >
       {mediaAsset && (
-        <Image {...mediaAsset} hasShadow={noShadow ? false : true} />
+        <a href={assetLink} target="_blank">
+          <Image {...mediaAsset} hasShadow={noShadow ? false : true} />
+        </a>
       )}
       {!noShadow && (
         <div

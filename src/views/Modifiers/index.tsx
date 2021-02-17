@@ -39,7 +39,7 @@ const Resources = () => {
     }));
 
   const behaviorModifiers = data.page.pageContentCollection.items
-    .slice(3, 7)
+    .slice(3, 6)
     .map((item: any, index: number) => ({
       ...item,
       index,
@@ -48,7 +48,7 @@ const Resources = () => {
     }));
 
   const frequencyModifiers = data.page.pageContentCollection.items
-    .slice(7, 9)
+    .slice(6, 9)
     .map((item: any, index: number) => ({
       ...item,
       index,
