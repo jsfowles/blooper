@@ -10,7 +10,8 @@ const NAV_ITEMS = [
   {
     id: 3,
     title: 'interface',
-    route: '/interface',
+    external: true,
+    route: 'https://chasebliss.com/wp-content/uploads/2021/02/blooper.3.0.html',
   },
   { id: 4, title: 'midi', route: '/midi' },
   { id: 5, title: 'FAQ', route: '/faq' },
@@ -23,10 +24,10 @@ const item = {
 
 const NavItems = ({ setOpenMenu, isMobile }) => (
   <NavItemsWrapper isMobile={isMobile}>
-    {NAV_ITEMS.map(({ id, title, route }) => (
+    {NAV_ITEMS.map(({ id, title, route, external }) => (
       <MenuItem key={id} variants={item}>
         <Link href={route} passHref scroll>
-          <a>
+          <a target={external === true && '__blank'}>
             <TypeScale.P
               whileHover={{ scale: 1.1 }}
               onClick={() => {
