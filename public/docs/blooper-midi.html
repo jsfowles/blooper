@@ -1484,7 +1484,7 @@
           $('dnload_' + _wave_dnload_session + '_' + _wave_dnload_track).innerHTML = '. . .';
           _midi_output_port.send(_prop_to_midi([6, _wave_dnload_track, 0, 0, 0, 0]));
         } else {
-          $('dnload_' + _wave_dnload_session + '_' + _wave_dnload_track.innerHTML) = 'Done';
+$('dnload_' + _wave_dnload_session + '_' + _wave_dnload_track.innerHTML) = 'Done';
           setTimeout(reload_page, 1000);
         }
       }
