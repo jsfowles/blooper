@@ -5,7 +5,6 @@ import Image from '@components/Image';
 import Button from '@components/Button';
 
 const Media = ({ textSummary, mediaAsset, assetLink, noShadow }) => {
-  console.log(mediaAsset, 'here');
   if (!mediaAsset) {
     return null;
   }
@@ -19,9 +18,9 @@ const Media = ({ textSummary, mediaAsset, assetLink, noShadow }) => {
       }}
     >
       {mediaAsset && (
-        <>
+        <a href={mediaAsset.url} target="_blank">
           <Image {...mediaAsset} hasShadow={noShadow ? false : true} />
-        </>
+        </a>
       )}
       {!noShadow && (
         <div

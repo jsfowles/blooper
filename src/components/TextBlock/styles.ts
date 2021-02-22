@@ -9,7 +9,7 @@ export const TextBlockWrapper = styled(motion.div)`
   padding: 2vh 7vw;
 
   ${props => props.theme.breakpoints.TABLET} {
-    padding: 7vh 7vw;
+    padding: 7vh 7vw 0;
   }
   h1 {
     text-align: center;
