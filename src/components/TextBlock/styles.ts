@@ -6,8 +6,11 @@ export const TextBlockWrapper = styled(motion.div)`
   flex-direction: column;
   align-items: center;
   position: relative;
-  padding: 7vh 7vw 0;
+  padding: 2vh 7vw;
 
+  ${props => props.theme.breakpoints.TABLET} {
+    padding: 7vh 7vw;
+  }
   h1 {
     text-align: center;
     font-size: 60px;

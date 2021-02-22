@@ -51,6 +51,7 @@ const Home = () => {
           style={{
             display: 'flex',
             flexDirection: 'column',
+            padding: '0 7vw',
 
             paddingBottom: '40px',
             maxWidth: 1024,
@@ -68,9 +69,8 @@ const Home = () => {
           <MD
             style={{
               fontSize: 18,
-              maxWidth: '42ch',
               width: '100%',
-              paddingTop: 24,
+              paddingTop: 10,
             }}
           >
             <ReactMarkdown plugins={[gfm]}>{textSummary}</ReactMarkdown>

@@ -11,7 +11,14 @@ interface Props {
   [key: string]: any;
 }
 
-const Img = ({ url, height, width, alt, hasShadow, ...props }: Props) => {
+const Img = ({
+  url,
+  height = '100%',
+  width = '100%',
+  alt,
+  hasShadow,
+  ...props
+}: Props) => {
   const [ref, animate] = useMotionTrigger({
     threshold: observerThreshold.XS,
     triggerOnce: true,

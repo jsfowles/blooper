@@ -5,9 +5,11 @@ import Image from '@components/Image';
 import Button from '@components/Button';
 
 const Media = ({ textSummary, mediaAsset, assetLink, noShadow }) => {
+  console.log(mediaAsset, 'here');
   if (!mediaAsset) {
     return null;
   }
+
   return (
     <div
       style={{
@@ -17,9 +19,9 @@ const Media = ({ textSummary, mediaAsset, assetLink, noShadow }) => {
       }}
     >
       {mediaAsset && (
-        <a href={assetLink} target="_blank">
+        <>
           <Image {...mediaAsset} hasShadow={noShadow ? false : true} />
-        </a>
+        </>
       )}
       {!noShadow && (
         <div

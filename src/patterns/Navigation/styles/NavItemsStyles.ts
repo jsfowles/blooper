@@ -19,10 +19,10 @@ export const NavItemsWrapper = styled(motion.ul)`
   align-items: flex-end;
   padding: 80px 14vw;
 
-  ${props => props.theme.breakpoints.TABLET_HD} {
+  ${props => props.theme.breakpoints.TABLET} {
     height: initial;
     justify-content: space-between;
-    max-width: 600px;
+    max-width: 520px;
     flex-direction: row;
     padding: initial;
   }

@@ -14,7 +14,7 @@ import Media from './Media';
 const Carousel = ({ cards, noShadow, reverse }) => {
   const [shiftIndex, setShiftIndex] = React.useState(0);
   const [focus, setFocus] = useArrowKeyFocus(cards.length);
-  console.log(cards);
+
   return (
     <div style={{ paddingTop: 60 }}>
       <StoriesWrapper reverse={reverse}>
@@ -44,7 +44,7 @@ const Carousel = ({ cards, noShadow, reverse }) => {
             {cards.map(({ sys, textSummary, assetLink, mediaAsset }, index) => (
               <>
                 {shiftIndex === index && (
-                  <>
+                  <a>
                     <Media
                       noShadow={noShadow}
                       mediaAsset={mediaAsset}
@@ -57,7 +57,7 @@ const Carousel = ({ cards, noShadow, reverse }) => {
                         textSummary={textSummary}
                       />
                     )}
-                  </>
+                  </a>
                 )}
               </>
             ))}
