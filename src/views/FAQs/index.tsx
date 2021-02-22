@@ -61,7 +61,6 @@ const Home = () => {
           <h4
             style={{
               fontSize: 28,
-              maxWidth: '28ch',
             }}
           >
             {heading}
