@@ -59,6 +59,7 @@ export default class MyDocument extends Document {
         </Head>
 
         <body>
+          <div id="debug" />
           <Main />
           <NextScript />
         </body>

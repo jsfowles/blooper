@@ -10,8 +10,7 @@ const NAV_ITEMS = [
   {
     id: 3,
     title: 'interface',
-    external: true,
-    route: 'https://chasebliss.com/wp-content/uploads/2021/02/blooper.3.0.html',
+    route: '/interface',
   },
   { id: 4, title: 'midi', route: '/midi' },
   { id: 5, title: 'FAQ', route: '/faq' },
