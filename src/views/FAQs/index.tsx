@@ -20,6 +20,7 @@ const MD = styled.div`
   p {
     padding-bottom: 1em;
     line-height: 140%;
+    text-align: left;
     strong {
       font-weight: bold;
     }
@@ -51,8 +52,7 @@ const Home = () => {
           style={{
             display: 'flex',
             flexDirection: 'column',
-            padding: '0 7vw',
-
+            padding: '0 40px',
             paddingBottom: '40px',
             maxWidth: 1024,
             margin: '0 auto',
@@ -67,6 +67,7 @@ const Home = () => {
           </h4>
           <MD
             style={{
+              textAlign: 'left',
               fontSize: 18,
               width: '100%',
               paddingTop: 10,

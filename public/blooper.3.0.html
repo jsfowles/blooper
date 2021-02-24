@@ -848,7 +848,7 @@ window.addEventListener('load', function()
     if(navigator.requestMIDIAccess) {
         navigator.requestMIDIAccess({sysex:true}).then(_on_midi_success,_on_midi_failure);
     }
-    else document.write( "USB/MIDI is not available." );
+    else document.write( "nope, use Chrome please" );
 });
 
 var _discover_session = 0, _ready = false;

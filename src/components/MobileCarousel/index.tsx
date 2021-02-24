@@ -1,14 +1,10 @@
 // @ts-nocheck
-import SwiperCore, { EffectCoverflow, Navigation } from 'swiper';
-import { useMediaQuery } from 'react-responsive';
+
 import ReactPlayer from 'react-player';
 import {
   CarouselProvider,
   Slider,
   Slide,
-  ButtonBack,
-  ButtonNext,
-  Dot,
   DotGroup,
   Image,
 } from 'pure-react-carousel';

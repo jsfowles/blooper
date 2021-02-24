@@ -62,6 +62,7 @@ export const GlobalStyles = createGlobalStyle`
 
   p {
     line-height: 1.25;
+    text-align: center;
   }
 
   body {
@@ -72,7 +73,7 @@ export const GlobalStyles = createGlobalStyle`
     display: flex;
     flex-direction: column;
     text-transform: lowercase;
-      color: #5b6770;
+    color: #5b6770;
   }
 
   ol, ul {
@@ -162,24 +163,24 @@ export const GlobalStyles = createGlobalStyle`
 
   .filled-header {
     margin: 0 auto;
-    width: max-content;
-    padding: 18px;
-    background: #428fa4;
-    color: white;
+
+    padding-bottom: 24px;
+    color: #5b6770;
     text-align: center;
     font-size: 40px;
 
-    ${breakpoints.TABLET_HD}{
-    font-size: 60px
+    ${breakpoints.TABLET_HD} {
+      font-size: 60px
     }
   }
+
+  a {
+    color: #5B6770;
+  }
+
+  p {
     a {
-      color: #5B6770;
+      color: #428fa4
     }
-    
-    p {
-        a {
-            color: #428fa4
-        }
-    }
+  }
 `;

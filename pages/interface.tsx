@@ -1,7 +1,20 @@
+// @ts-nocheck
 import React from 'react';
 import Head from 'next/head';
 
 const Interface = () => {
+  if (
+    typeof window !== 'undefined' &&
+    typeof window.navigator !== 'undefined' &&
+    typeof window.navigator.userAgent.includes('Chrome')
+  ) {
+    console.log('this is chrome');
+  } else {
+    function myFunction() {
+      alert('Your file is being uploaded!');
+    }
+  }
+
   return (
     <>
       <Head>
