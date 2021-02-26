@@ -5,6 +5,22 @@ import { colors, uiColors } from './colors';
 import { breakpoints } from '@identity/breakpoints';
 
 export const GlobalStyles = createGlobalStyle`
+
+  .carousel__back-button, .carousel__next-button {
+    border: none;
+    background: none;
+    position: absolute;
+    top: 50%;
+  }
+
+  .carousel__back-button {
+    left: 0;
+  }
+
+  .carousel__next-button {
+    right: 0;
+  }
+
   :root {
     ${uiColors} ${colors} ${constants}
   }
@@ -48,6 +64,10 @@ export const GlobalStyles = createGlobalStyle`
   article, aside, details, figcaption, figure,
   footer, header, hgroup, menu, nav, section {
     display: block;
+  }
+
+  main {
+
   }
 
   header {
@@ -114,7 +134,7 @@ export const GlobalStyles = createGlobalStyle`
   .burger .burger-lines,
   .burger .burger-lines:after,
   .burger .burger-lines:before {
-    background-color: #a8d1e4;
+    background-color: #428fa4;
   }
 
   .next-image {
@@ -127,7 +147,9 @@ export const GlobalStyles = createGlobalStyle`
 
   .player-wrapper {
     position: relative;
-    padding-top: 56.25%
+    padding-top: 50.25%;
+    height: 100%;
+    width: 100%;
   }
 
   .react-player {
@@ -136,15 +158,17 @@ export const GlobalStyles = createGlobalStyle`
     left: 0;
   }
 
+  .carousel {
+    position: relative;
+  }
+
   .carousel__inner-slide {
     display: flex;
     flex-direction: column;
-    padding: 0 7vw;
 
+    img, iframe {
+      padding: 0 10vw;
 
-    img {
-
-      object-fit: contain;
     }
 
   }
@@ -157,7 +181,9 @@ export const GlobalStyles = createGlobalStyle`
 
     button {
       margin: 0 2px;
+      background: #428fa4;
       border: 2px solid #428fa4;
+
     }
   }
 

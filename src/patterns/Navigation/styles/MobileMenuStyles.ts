@@ -15,5 +15,8 @@ export const Overlay = styled(motion.div)`
 export const MobileMenuWrapper = styled(motion.div)`
   .burger {
     z-index: 101;
+    position: fixed;
+    right: 7vw;
+    top: 25px;
   }
 `;

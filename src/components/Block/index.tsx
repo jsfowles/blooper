@@ -70,7 +70,7 @@ const Block = ({ heading, textSummary, index, background, slug }: Props) => {
                 : { height: isMobile ? 0 : 'auto', opacity: isMobile ? 0 : 1 }
             }
           >
-            <motion.p>{textSummary}</motion.p>
+            <motion.p style={{ textAlign: 'left' }}>{textSummary}</motion.p>
             {isMobile && (
               <Link href={'/'} passHref>
                 <a>

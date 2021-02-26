@@ -6,10 +6,22 @@ export const Menu = styled(motion.header)`
   width: 100%;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
+  background: white;
+  position: fixed;
+  height: 80px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  ${props => props.theme.breakpoints.TABLET} {
+    box-shadow: none;
+    position: relative;
+  }
 
   img {
+    position: fixed;
+    z-index: 100;
+    top: 20px;
+    left: 7vw;
     width: 40px;
     ${props => props.theme.breakpoints.TABLET} {
       width: 70px;

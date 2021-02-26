@@ -27,7 +27,11 @@ const MyApp = ({ Component, pageProps, router, apollo }: AppProps & Props) => {
       <ApolloProvider client={apollo}>
         <Layout>
           <AnimatePresence exitBeforeEnter>
-            <motion.main {...mainMotion} key={router.route}>
+            <motion.main
+              {...mainMotion}
+              key={router.route}
+              style={{ marginTop: 80 }}
+            >
               <Component {...pageProps} />
             </motion.main>
           </AnimatePresence>

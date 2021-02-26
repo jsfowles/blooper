@@ -5,8 +5,9 @@ import { useQuery } from '@apollo/client';
 import { PageQuery } from '@graphql/PageQuery';
 import TextBlock from '@components/TextBlock';
 import Carousel from '@components/Carousel';
-import MobileCarousel from '@components/MobileCarousel';
+
 import { useMediaQuery } from 'react-responsive';
+import MobileResources from '@components/MobileResources';
 
 const BG = [
   'var(--primary-1)',
@@ -40,7 +41,7 @@ const Resources = () => {
     <>
       <TextBlock {...data.page.heroSection} />
       {isMobile ? (
-        <MobileCarousel cards={resourceBlocks} noResize />
+        <MobileResources cards={resourceBlocks} />
       ) : (
         <Carousel cards={resourceBlocks} />
       )}

@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 export const Content = styled(motion.div)`
   position: relative;
   padding: 0 7vw;
-  padding-bottom: 20%;
+  padding-bottom: 120px;
 
   img {
     object-fit: contain;

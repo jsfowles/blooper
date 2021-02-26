@@ -7,16 +7,24 @@ import {
   Slide,
   DotGroup,
   Image,
+  ButtonBack,
+  ButtonNext,
 } from 'pure-react-carousel';
 import React from 'react';
+import { BiRightArrow, BiLeftArrow } from 'react-icons/bi';
+import styled from 'styled-components';
 
+export const Whoops = styled.div`
+  padding: 7vw 0;
+`;
 const MobileCarousel = ({ cards, noResize }) => {
+  const loop = cards.map(({ mediaAsset }) => mediaAsset);
   return (
-    <div style={{ padding: '7vw 0' }}>
+    <Whoops>
       <CarouselProvider
-        naturalSlideWidth={1700}
-        naturalSlideHeight={2200}
-        isIntrinsicHeight={!noResize}
+        // naturalSlideWidth={loop.width}
+        // naturalSlideHeight={loop.height}
+        isIntrinsicHeight
         totalSlides={cards.length}
       >
         <Slider>
@@ -28,7 +36,7 @@ const MobileCarousel = ({ cards, noResize }) => {
                   <a href={assetLink} target="_blank">
                     <Image
                       src={mediaAsset?.url}
-                      style={{ height: 'calc(100% - 41px)' }}
+                      // style={{ height: 'calc(100% - 41px)' }}
                     />
                   </a>
                 ) : (
@@ -40,18 +48,21 @@ const MobileCarousel = ({ cards, noResize }) => {
                     />
                   </div>
                 )}
-                <p
-                  style={{ fontSize: 27, textAlign: 'center', paddingTop: 60 }}
-                >
+                <p style={{ fontSize: 18, textAlign: 'center' }}>
                   {textSummary}
                 </p>
               </Slide>
             ),
           )}
         </Slider>
-        <DotGroup />
+        <ButtonBack>
+          <BiLeftArrow size="8vw" />
+        </ButtonBack>
+        <ButtonNext>
+          <BiRightArrow size="8vw" />
+        </ButtonNext>
       </CarouselProvider>
-    </div>
+    </Whoops>
   );
 };
 
