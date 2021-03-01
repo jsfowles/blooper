@@ -34,7 +34,7 @@ const Img = ({
     <motion.figure
       style={{
         position: 'relative',
-        display: 'table',
+
         justifyContent: 'center',
         alignItems: 'center',
         width: width,

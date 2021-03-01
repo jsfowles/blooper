@@ -30,10 +30,12 @@ const Media = ({ textSummary, mediaAsset, assetLink, noShadow }) => {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
-            paddingLeft: '5%',
+            paddingLeft: '26px',
           }}
         >
-          <p style={{ paddingTop: 'initial', fontSize: 18 }}>{textSummary}</p>
+          <p style={{ paddingTop: 'initial', fontSize: 18, textAlign: 'left' }}>
+            {textSummary}
+          </p>
           <div style={{ display: 'flex' }}>
             <a href={assetLink} target="_blank">
               <Button>view</Button>

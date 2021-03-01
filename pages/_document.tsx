@@ -54,7 +54,16 @@ export default class MyDocument extends Document {
             href="/images/s10.png"
             type="image/x-icon"
           />
-
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-2243495Z17');
+        `,
+            }}
+          />
           <GlobalStyles />
         </Head>
 

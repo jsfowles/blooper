@@ -18,7 +18,7 @@ const Carousel = ({ cards, noShadow, reverse }) => {
   return (
     <div>
       <StoriesWrapper reverse={reverse}>
-        <Box reverse={reverse} style={{ padding: '0 7vw' }}>
+        <Box reverse={reverse} style={{ padding: '0 4vw 0 7vw' }}>
           {cards.map(({ sys, heading, title }, index) => (
             <Bloop key={sys.id}>
               <Item
