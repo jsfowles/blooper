@@ -16,55 +16,58 @@ const Carousel = ({ cards, noShadow, reverse }) => {
   const [focus, setFocus] = useArrowKeyFocus(cards.length);
 
   return (
-    <div>
-      <StoriesWrapper reverse={reverse}>
-        <Box reverse={reverse} style={{ padding: '0 4vw 0 7vw' }}>
-          {cards.map(({ sys, heading, title }, index) => (
-            <Bloop key={sys.id}>
-              <Item
-                key={heading}
-                shiftIndex={shiftIndex}
-                setShiftIndex={setShiftIndex}
-                setFocus={setFocus}
-                id={index}
-                focus={focus === index}
-                title={heading}
-              />
-            </Bloop>
-          ))}
-        </Box>
+    <StoriesWrapper reverse={reverse}>
+      <Box reverse={reverse} style={{ padding: '0 60px', width: '50%' }}>
+        {cards.map(({ sys, heading, title }, index) => (
+          <Bloop key={sys.id}>
+            <Item
+              key={heading}
+              shiftIndex={shiftIndex}
+              setShiftIndex={setShiftIndex}
+              setFocus={setFocus}
+              id={index}
+              focus={focus === index}
+              title={heading}
+            />
+          </Bloop>
+        ))}
+      </Box>
 
-        <AnimatePresence exitBeforeEnter>
-          <Box
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
-            variant={cardMotion}
-          >
-            {cards.map(({ sys, textSummary, assetLink, mediaAsset }, index) => (
-              <>
-                {shiftIndex === index && (
-                  <a>
-                    <Media
-                      noShadow={noShadow}
-                      mediaAsset={mediaAsset}
+      <AnimatePresence exitBeforeEnter>
+        <Box
+          initial="hidden"
+          animate="visible"
+          exit="hidden"
+          variant={cardMotion}
+          style={{
+            width: '50%',
+            justifyContent: 'center',
+            paddingRight: '60px',
+          }}
+        >
+          {cards.map(({ sys, textSummary, assetLink, mediaAsset }, index) => (
+            <>
+              {shiftIndex === index && (
+                <>
+                  <Media
+                    noShadow={noShadow}
+                    mediaAsset={mediaAsset}
+                    assetLink={assetLink}
+                    textSummary={textSummary}
+                  />
+                  {!mediaAsset && (
+                    <VideoPlayer
                       assetLink={assetLink}
                       textSummary={textSummary}
                     />
-                    {!mediaAsset && (
-                      <VideoPlayer
-                        assetLink={assetLink}
-                        textSummary={textSummary}
-                      />
-                    )}
-                  </a>
-                )}
-              </>
-            ))}
-          </Box>
-        </AnimatePresence>
-      </StoriesWrapper>
-    </div>
+                  )}
+                </>
+              )}
+            </>
+          ))}
+        </Box>
+      </AnimatePresence>
+    </StoriesWrapper>
   );
 };
 

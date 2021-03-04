@@ -2,7 +2,15 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const Footer = () => {
-  return (
+  const [timer, setTimer] = React.useState(false);
+  React.useEffect(() => {
+    const delay = setTimeout(() => {
+      setTimer(true);
+    }, 2000);
+    return () => clearTimeout(delay);
+  }, []);
+
+  return timer ? (
     <motion.footer
       style={{
         position: 'relative',
@@ -30,7 +38,7 @@ const Footer = () => {
         className="s5"
       />
     </motion.footer>
-  );
+  ) : null;
 };
 
 export default Footer;

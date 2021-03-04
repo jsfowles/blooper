@@ -4,8 +4,11 @@ import { motion } from 'framer-motion';
 export const Content = styled(motion.div)`
   position: relative;
   padding: 0 7vw;
-  padding-bottom: 120px;
+  padding-bottom: 60px;
 
+  ${props => props.theme.breakpoints.TABLET} {
+    padding-bottom: 120px;
+  }
   img {
     object-fit: contain;
     max-width: 100%;

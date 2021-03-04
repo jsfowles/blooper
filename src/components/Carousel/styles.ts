@@ -7,10 +7,9 @@ export const StoriesWrapper = styled(motion.section)`
   display: flex;
   flex-direction: ${props => props.reverse && 'row-reverse'};
 
-  //width: ${viewCalc(1024)};
   margin: 60px auto;
-  //max-width: 1024px;
-  min-height: 550px;
+  align-items: center;
+  min-height: 100%;
 
   ul {
     width: 100%;
@@ -28,11 +27,11 @@ export const Bloop = styled(motion.li)`
 export const LI = styled(motion.p)`
   outline: none;
   width: 100%;
-  text-align: left;
+  text-align: right;
   font-size: ${props =>
     props.isActive
-      ? 'calc(55px + 13 * (100vw - 1000px) / 1200)'
-      : 'calc(35px + 13 * (100vw - 100px) / 1200)'};
+      ? 'calc(48px + 13 * (100vw - 1000px) / 1440)'
+      : 'calc(24px + 13 * (100vw - 100px) / 1440)'};
   font-weight: bold;
   transition: all 500ms ease;
   padding: 8px 0;
@@ -45,9 +44,8 @@ export const LI = styled(motion.p)`
 `;
 
 export const Box = styled(motion.div)`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: ${props => (!props.reverse ? 'flex-end' : 'flex-start')};
-  width: 50%;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: ${props => (!props.reverse ? 'flex-end' : 'flex-start')};
 `;

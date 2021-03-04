@@ -9,11 +9,16 @@ const Media = ({ textSummary, mediaAsset, assetLink, noShadow }) => {
     return null;
   }
 
+  const isLandscape = mediaAsset.height < mediaAsset.width;
+
+  console.log(isLandscape);
   return (
     <div
       style={{
         display: 'flex',
+        flexDirection: isLandscape ? 'column' : 'row',
         width: '100%',
+        height: '100%',
         justifyContent: 'center',
       }}
     >
@@ -25,12 +30,12 @@ const Media = ({ textSummary, mediaAsset, assetLink, noShadow }) => {
       {!noShadow && (
         <div
           style={{
-            maxWidth: '50%',
-            width: '100%',
+            width: isLandscape && '100%',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
-            paddingLeft: '26px',
+            paddingLeft: !isLandscape && '25px',
+            paddingTop: isLandscape && 25,
           }}
         >
           <p style={{ paddingTop: 'initial', fontSize: 18, textAlign: 'left' }}>

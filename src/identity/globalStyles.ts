@@ -34,6 +34,8 @@ export const GlobalStyles = createGlobalStyle`
     scroll-behavior: smooth;
     touch-action: manipulation;
     background: #ffffff;
+
+
   }
 
   * {
@@ -66,10 +68,6 @@ export const GlobalStyles = createGlobalStyle`
     display: block;
   }
 
-  main {
-
-  }
-
   header {
 
     z-index: 1000;
@@ -94,6 +92,7 @@ export const GlobalStyles = createGlobalStyle`
     flex-direction: column;
     text-transform: lowercase;
     color: #5b6770;
+
   }
 
   ol, ul {
@@ -173,6 +172,10 @@ export const GlobalStyles = createGlobalStyle`
 
   }
 
+  .bloop-img {
+    z-index: 1;
+  }
+
   .carousel__dot-group {
 
     display: flex;
@@ -185,6 +188,20 @@ export const GlobalStyles = createGlobalStyle`
       border: 2px solid #428fa4;
 
     }
+  }
+
+  .hidden {
+    opacity: 0;
+    transition: all 500ms ease-in-out;
+    transform: scale(0.6);
+  }
+
+  .visible {
+    opacity: 1;
+    transition: all 500ms ease-in-out;
+    transform: scale(1);
+
+
   }
 
   .filled-header {
@@ -208,5 +225,10 @@ export const GlobalStyles = createGlobalStyle`
     a {
       color: #428fa4
     }
+  }
+
+
+  .sliderAnimation___300FY {
+    transition: transform 1.0s;
   }
 `;

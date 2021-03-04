@@ -27,7 +27,13 @@ const Header = () => {
   }, [offset]);
 
   return (
-    <Menu>
+    <Menu
+      initial={{ opacity: 0 }}
+      animate={{
+        opacity: 1,
+        transition: { delay: 1.25 },
+      }}
+    >
       <Link passHref href="/">
         <motion.img
           whileHover={{ scale: 1.1 }}

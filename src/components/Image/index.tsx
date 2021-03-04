@@ -34,12 +34,11 @@ const Img = ({
     <motion.figure
       style={{
         position: 'relative',
-
+        display: 'flex',
         justifyContent: 'center',
-        alignItems: 'center',
-        width: width,
-        maxWidth: isModifiers ? 500 : 300,
-        height: isModifiers ? 700 : 'initial',
+        width: isModifiers ? 500 : '80%',
+        maxWidth: isModifiers ? 500 : '80%',
+        height: isModifiers ? 700 : '100%',
         maxHeight: height,
         borderRadius: hasShadow && 25,
         boxShadow: hasShadow && 'rgba(0, 0, 0, 0.3) 0px 0px 10px',
@@ -59,7 +58,7 @@ const Img = ({
       ) : (
         <Image
           className="next-image"
-          layout="responsive"
+          layout="intrinsic"
           width={width}
           height={height}
           {...props}

@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
 export const BtnWrapper = styled(motion.button)`
-  margin-top: 30px;
+  margin-top: 16px;
   margin-right: 25px;
   font-size: 16px;
   padding: 14px;

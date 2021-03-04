@@ -3,7 +3,7 @@ import { AppProps } from 'next/app';
 import withApollo from 'next-with-apollo';
 import Head from 'next/head';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import '@animated-burgers/burger-squeeze/dist/styles.css';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import 'swiper/swiper-bundle.css';
@@ -17,23 +17,27 @@ interface Props {
   pageProps: any;
   apollo: any;
 }
+
+const Main = styled(motion.main)`
+  margin-top: 80px;
+  ${props => props.theme.breakpoints.TABLET} {
+    margin-top: 0px;
+  }
+`;
+
 const MyApp = ({ Component, pageProps, router, apollo }: AppProps & Props) => {
   return (
     <ThemeProvider theme={theme}>
       <Head>
-        <title>The Blooper - CBA</title>
+        <title>Blooper - CBA</title>
       </Head>
 
       <ApolloProvider client={apollo}>
         <Layout>
           <AnimatePresence exitBeforeEnter>
-            <motion.main
-              {...mainMotion}
-              key={router.route}
-              style={{ marginTop: 80 }}
-            >
+            <Main {...mainMotion} key={router.route}>
               <Component {...pageProps} />
-            </motion.main>
+            </Main>
           </AnimatePresence>
         </Layout>
       </ApolloProvider>

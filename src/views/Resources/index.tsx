@@ -7,6 +7,7 @@ import TextBlock from '@components/TextBlock';
 import Carousel from '@components/Carousel';
 import MobileResources from '@components/MobileResources';
 import { useMediaQuery } from 'react-responsive';
+import MobileCarousel from '@components/MobileCarousel';
 
 const BG = [
   'var(--primary-1)',
