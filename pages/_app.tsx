@@ -29,7 +29,7 @@ const MyApp = ({ Component, pageProps, router, apollo }: AppProps & Props) => {
   return (
     <ThemeProvider theme={theme}>
       <Head>
-        <title>Blooper / CBA</title>
+        <title>Blooper - CBA</title>
       </Head>
 
       <ApolloProvider client={apollo}>
