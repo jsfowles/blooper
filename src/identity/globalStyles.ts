@@ -227,7 +227,14 @@ export const GlobalStyles = createGlobalStyle`
     }
   }
 
-
+ul {
+    padding-bottom:1em;
+    list-style: disc;
+    list-style-position: inside;
+    li {
+        padding: 0.25em 0;
+    }
+}
   .sliderAnimation___300FY {
     transition: transform 1.0s;
   }
